@@ -1,0 +1,15 @@
+@import "tailwindcss";
+/* Add this to your index.css or a separate styles.css file */
+/* App.css */
+.app {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* We don't need the .animated-background class anymore since we're using canvas */
+
+.content {
+  position: relative;
+  z-index: 1;
+}
