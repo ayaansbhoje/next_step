@@ -14,16 +14,21 @@ const Footer = () => {
       <div className="container mx-auto px-6 relative z-20">
         {/* Header - left aligned */}
         <div className="mb-16">
-          <h2 className="text-5xl font-bold tracking-wider text-white">YOUR JOURNEY BEGINS HERE</h2>
+          <h2 className="text-4xl font-bold tracking-wider text-white">YOUR JOURNEY BEGINS HERE</h2>
         </div>
         
         <div className="flex flex-wrap">
           {/* Left - Logo at bottom left */}
-          <div className="w-1/5 mt-16">
-            <div className="bg-black rounded-full h-32 w-32 flex items-center justify-center border-4" style={{ borderColor: '#AB8525' }}>
-              <span className="text-4xl font-bold" style={{ color: '#AB8525' }}>TNS</span>
+          <div className="w-1/5 mt-16 -ml-8">
+            <div className="flex items-center justify-start">
+              <div className="h-40 w-40 flex items-center justify-center">
+                <img
+                  src="/assets/tns-logo.png"
+                  alt="TNS Logo"
+                  className="h-36 w-36 object-contain"
+                />
+              </div>
             </div>
-            <div className="mt-2 text-lg text-white opacity-80">THE NEXT STEP</div>
           </div>
           
           {/* Middle section with Contact and Sitemap side by side */}
