@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className="mr-2">
             <div className="h-14 w-14 flex items-center justify-center">
               <img
-                src="public\\assets\\tns-logo.png"
+                src="/assets/tns-logo.png"
                 alt="TNS Logo"
                 className="h-14 w-14 object-contain"
               />
@@ -25,7 +25,7 @@ const Navbar = () => {
           <div className="mr-2">
             <div className="h-36 w-36 flex items-center justify-center">
               <img
-                src="public\assets\tns_logo_2.png"
+                src="/assets/tns_logo_2.png"
                 alt="TNS Logo"
                 className="h-36 w-36 object-contain"
               />
