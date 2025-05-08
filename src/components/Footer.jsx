@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="relative overflow-hidden py-12">
       {/* Background image - fully visible */}
       <img 
-        src="public\assets\footer_bg.png" 
+        src="/assets/footer_bg.png" 
         alt="Footer background" 
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
