@@ -19,6 +19,7 @@ function App() {
       <AboutUs />
       <OurServices />
       <LeadershipPrograms />
+      <ReviewSection />
       
       <Footer /> {/* Add the Footer component here */}
       <div className="content">
