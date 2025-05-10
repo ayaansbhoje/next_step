@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,23 +89,23 @@ const Navbar = () => {
         
         <div className="flex flex-col p-8 pt-12 space-y-3">
           <div className="border-b border-white py-5">
-            <a href="/" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">HOME</a>
+            <Link to="/" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">HOME</Link>
           </div>
           
           <div className="border-b border-white py-5">
-            <a href="/about" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">ABOUT US</a>
+            <Link to="/about" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">ABOUT US</Link>
           </div>
           
           <div className="border-b border-white py-5">
-            <a href="/services" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">SERVICES</a>
+            <Link to="/services" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">SERVICES</Link>
           </div>
           
           <div className="border-b border-white py-5">
-            <a href="/reviews" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">REVIEWS</a>
+            <Link to="/reviews" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">REVIEWS</Link>
           </div>
           
           <div className="border-b border-white py-5">
-            <a href="/contact" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">CONTACT US</a>
+            <Link to="/contact" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">CONTACT US</Link>
           </div>
           {/* Social Icons in Slide-in Menu */}
           <div className="flex space-x-6 mt-8">
