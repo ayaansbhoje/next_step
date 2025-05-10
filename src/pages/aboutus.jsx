@@ -4,6 +4,8 @@ import AboutUsHero from '../components/AboutUsHero'; // Adjust the import path a
 import MissionWhyChooseUs from '../components/MissionWhyChooseUs'; // Adjust the import path as needed
 import MeetTheTeam from '../components/MeetTheTeam'; // Meet The Team component
 import OurApproach from '../components/OurApproach'; // Our Approach component
+import Ourvalues from '../components/OurValuesComponent'
+import Footer from '../components/Footer';
 
 const AboutUsPage = () => {
   return (
@@ -13,6 +15,8 @@ const AboutUsPage = () => {
       <MissionWhyChooseUs />
       <MeetTheTeam />
       <OurApproach /> {/* Added the Our Approach component */}
+      <Ourvalues />
+      <Footer />
       
       {/* You can add more content sections below if needed */}
     </div>
