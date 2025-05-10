@@ -29,7 +29,7 @@ const MeetTheTeam = () => {
             <div className="relative overflow-hidden rounded-lg w-full aspect-square">
               {/* First team member image */}
               <img 
-                src="assets/partner_1.jpeg" 
+                src="/assets/partner_1.jpeg" 
                 alt="Shabnam Jussa Gaitonde"
                 className="w-full h-full object-cover"
               />
@@ -65,7 +65,7 @@ const MeetTheTeam = () => {
             <div className="relative overflow-hidden rounded-lg w-full aspect-square">
               {/* Second team member image */}
               <img 
-                src="/api/placeholder/250/250" 
+                src="/assets/partner_2.jpeg" 
                 alt="Chandrahas Shetty"
                 className="w-full h-full object-cover"
               />

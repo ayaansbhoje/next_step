@@ -22,7 +22,7 @@ const MissionWhyChooseUs = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <img 
-              src="assets/img_1.jpg" 
+              src="/assets/img_1.jpg" 
               alt="Person working on laptop with notes" 
               className="w-full h-[400px] object-cover rounded-lg" 
             />
@@ -72,7 +72,7 @@ const MissionWhyChooseUs = () => {
             transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
           >
             <img 
-              src="assets/img_2demo.jpg" 
+              src="/assets/img_2demo.jpg" 
               alt="Team collaboration in meeting" 
               className="w-full h-[400px] object-cover rounded-lg" 
             />
