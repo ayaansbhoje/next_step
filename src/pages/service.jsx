@@ -5,6 +5,7 @@ import Footer from '../components/Footer'; // Import your existing Footer compon
 import ServicesHero from '../components/ServicesHero'; // Import the hero component we created
 import HRServices from '../components/HRServices';
 import Leadership from '../components/Leadership';
+import InstituteSlider from '../components/InstituteSlider'
 
 const ServicesPage = () => {
   return (
@@ -18,6 +19,8 @@ const ServicesPage = () => {
       <HRServices />
 
       <Leadership />
+
+      <InstituteSlider />
      
       
       {/* Footer at the bottom */}

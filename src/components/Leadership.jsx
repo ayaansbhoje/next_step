@@ -1,7 +1,35 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
 export default function Leadership() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const controls = useAnimation();
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        } else {
+          controls.start("hidden");
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [controls]);
 
   // Program sections data
   const programs = [
@@ -20,31 +48,68 @@ export default function Leadership() {
   ];
 
   return (
-    <div className="bg-[#DBB965] p-6">
+    <div ref={sectionRef} className="bg-[#DBB965] rounded-lg p-6">
       {/* Header row */}
-      <div className="flex justify-between mb-8">
+      <motion.div 
+        className="flex justify-between mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+        }}
+      >
         <div className="w-1/3">
           <h1 className="text-white text-4xl font-bold tracking-widest leading-tight">
             Leadership<br/>Development<br/>Programs
           </h1>
         </div>
         <div className="w-1/2">
-          <p className="text-white text-2xl text-right mt-4">
+          <p className="text-white text-xl text-right mt-4">
             Develop a strong leadership team as part of succession
             planning and retention strategy, to support the
             organization's strategic goals for
             business expansion.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Divider */}
-      <hr className="border-white my-6" />
+      <motion.hr 
+        className="border-white my-6"
+        initial={{ scaleX: 0 }}
+        animate={controls}
+        variants={{
+          hidden: { scaleX: 0 },
+          visible: { 
+            scaleX: 1, 
+            transition: { 
+              delay: 0.3,
+              duration: 0.6 
+            }
+          }
+        }}
+      />
 
       {/* Program sections with hover effects */}
       {programs.map((program, index) => (
-        <div key={index}>
-          <div 
+        <motion.div 
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { 
+              opacity: 1, 
+              y: 0, 
+              transition: { 
+                delay: 0.4 + (index * 0.2),
+                duration: 0.6 
+              }
+            }
+          }}
+        >
+          <motion.div 
             className={`flex mb-8 p-4 rounded-lg transition-all duration-300 ${
               hoveredIndex === index 
                 ? index % 2 === 0 
@@ -54,6 +119,8 @@ export default function Leadership() {
             }`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
           >
             <div className="w-1/4">
               <img 
@@ -82,11 +149,27 @@ export default function Leadership() {
                 {program.description}
               </p>
             </div>
-          </div>
+          </motion.div>
           
           {/* Divider (except after the last item) */}
-          {index < programs.length - 1 && <hr className="border-white my-6" />}
-        </div>
+          {index < programs.length - 1 && (
+            <motion.hr 
+              className="border-white my-6"
+              initial={{ scaleX: 0 }}
+              animate={controls}
+              variants={{
+                hidden: { scaleX: 0 },
+                visible: { 
+                  scaleX: 1, 
+                  transition: { 
+                    delay: 0.5 + (index * 0.2),
+                    duration: 0.6 
+                  }
+                }
+              }}
+            />
+          )}
+        </motion.div>
       ))}
     </div>
   );

@@ -5,7 +5,7 @@ const ServicesHero = () => {
     <div className="relative h-screen w-full overflow-hidden">
       {/* Image tag instead of background image */}
       <img 
-        src="/api/placeholder/1200/800" 
+        src="/assets/service_1.jpg" 
         alt="People having a consultation in a bright office space"
         className="absolute inset-0 w-full h-full object-cover"
       />
