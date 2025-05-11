@@ -97,7 +97,7 @@ const Navbar = () => {
           </div>
           
           <div className="border-b border-white py-5">
-            <Link to="/services" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">SERVICES</Link>
+            <Link to="/ServicesPage" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">SERVICES</Link>
           </div>
           
           <div className="border-b border-white py-5">
@@ -105,7 +105,7 @@ const Navbar = () => {
           </div>
           
           <div className="border-b border-white py-5">
-            <Link to="/contact" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">CONTACT US</Link>
+            <Link to="/ContactUs" className="!text-white text-5xl font-bold transition duration-300 hover:opacity-80">CONTACT US</Link>
           </div>
           {/* Social Icons in Slide-in Menu */}
           <div className="flex space-x-6 mt-8">

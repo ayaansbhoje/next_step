@@ -4,19 +4,19 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 
 const values = [   
   {     
-    title: "Integrity",     
+    title: "Integrity in Action",     
     icon: <Zap size={28} className="text-inherit" />,     
-    description: "We are guided by the highest ethical standards. We practice transparency and honesty in all that we undertake."   
+    description: "We commit to being honest, transparent, and ethical in all our interactions. We honour our commitments, stand by our word and take full accountability for our actions."   
   },   
   {     
-    title: "Excellence",     
+    title: "People First",     
     icon: <Users size={28} className="text-inherit" />,     
-    description: "We continuously strive for excellence in everything we do, pushing our capabilities, potential, and continuous improvement."   
+    description: "We place people at the heart of everything we do. We listen deeply, act with empathy and foster environments built on trust, respect, and genuine collaboration."   
   },   
   {     
-    title: "Partnership",     
+    title: "Empowerment",     
     icon: <Users size={28} className="text-inherit" />,     
-    description: "We believe in collaborative partnerships. We work together to achieve our goals and lasting success."   
+    description: "We collaborate with our clients, co-creating lasting solutions. We believe in true partnership — growing, leading, and succeeding together."   
   },   
   {     
     title: "Innovation",     
@@ -24,9 +24,9 @@ const values = [
     description: "We embrace creative solutions and forward-thinking approaches. We constantly seek to create new value."   
   },   
   {     
-    title: "Empowerment",     
+    title: "Growth",     
     icon: <Globe size={28} className="text-inherit" />,     
-    description: "We invest in people and their development. We inspire them to reach their maximum potential."   
+    description: "We believe in continuous learning and intentional development — for individuals, teams, and organizations. Every step forward is intentional, aligned with vision and driven by purpose"   
   } 
 ];  
 
