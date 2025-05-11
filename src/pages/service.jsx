@@ -4,6 +4,7 @@ import Navbar from '../components/navbar'; // Import your existing Navbar compon
 import Footer from '../components/Footer'; // Import your existing Footer component
 import ServicesHero from '../components/ServicesHero'; // Import the hero component we created
 import HRServices from '../components/HRServices';
+import Leadership from '../components/Leadership';
 
 const ServicesPage = () => {
   return (
@@ -15,6 +16,8 @@ const ServicesPage = () => {
       <ServicesHero />
       
       <HRServices />
+
+      <Leadership />
      
       
       {/* Footer at the bottom */}
