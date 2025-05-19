@@ -157,7 +157,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                 >
-                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("right", 0.5)}
@@ -165,7 +165,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                 >
-                  <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("right", 0.7)}
@@ -182,7 +182,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                 >
-                  <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img1.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("right", 0.3)}
@@ -190,7 +190,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                 >
-                  <img src="/assets/hero_img4.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("right", 0.5)}
@@ -198,7 +198,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                 >
-                  <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("right", 0.7)}
@@ -223,7 +223,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                 >
-                  <img src="YOUR_IMAGE_URL_5" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("left", 0.4)}
@@ -231,7 +231,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                 >
-                  <img src="YOUR_IMAGE_URL_6" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("left", 0.6)}
@@ -239,7 +239,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                 >
-                  <img src="YOUR_IMAGE_URL_7" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img4.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("left", 0.8)}
@@ -247,7 +247,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                 >
-                  <img src="YOUR_IMAGE_URL_8" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 {/* Duplicated boxes for seamless loop */}
                 <motion.div
@@ -256,7 +256,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                 >
-                  <img src="YOUR_IMAGE_URL_5" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("left", 0.4)}
@@ -264,7 +264,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                 >
-                  <img src="YOUR_IMAGE_URL_6" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("left", 0.6)}
@@ -272,7 +272,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                 >
-                  <img src="YOUR_IMAGE_URL_7" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("left", 0.8)}
@@ -280,7 +280,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                 >
-                  <img src="YOUR_IMAGE_URL_8" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
               </motion.div>
             </div>

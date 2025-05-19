@@ -28,27 +28,27 @@ export default function ContactUs() {
           {/* Left column */}
           <div className="w-1/2 flex flex-col items-end pr-12">
             <div className="flex items-center space-x-4 mb-4">
-              <Mail size={24} />
-              <span className="text-2xl font-bold">Email</span>
+              <Mail size={24} className="text-white" />
+              <span className="text-2xl font-bold text-white">Email</span>
             </div>
-            <a href="mailto:thenextstep@gmail.com" className="text-lg mb-8 hover:text-gray-200 transition-colors">
-              thenextstep@gmail.com
+            <a href="mailto:thenextstep@gmail.com" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
+              <span className="text-lg text-white">thenextstep@gmail.com</span>
             </a>
             
             <div className="flex items-center space-x-4 mb-4">
-              <Phone size={24} />
-              <span className="text-2xl font-bold">Phone no.</span>
+              <Phone size={24} className="text-white" />
+              <span className="text-2xl font-bold text-white">Phone no.</span>
             </div>
-            <a href="tel:+91-9827383883" className="text-lg mb-8 hover:text-gray-200 transition-colors">
-              +91-9827383883
+            <a href="tel:+91-9827383883" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
+              <span className="text-lg text-white">+91-9827383883</span>
             </a>
             
             <div className="flex items-center space-x-4 mb-4">
-              <MapPin size={24} />
-              <span className="text-2xl font-bold">Address</span>
+              <MapPin size={24} className="text-white" />
+              <span className="text-2xl font-bold text-white">Address</span>
             </div>
-            <a href="https://maps.google.com/?q=Your+Address" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-200 transition-colors">
-              Your Office Address Here
+            <a href="https://maps.google.com/?q=Your+Address" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
+              <span className="text-lg text-white">Your Office Address Here</span>
             </a>
           </div>
           
@@ -60,19 +60,19 @@ export default function ContactUs() {
             <h2 className="text-2xl font-bold mb-6">Connect our socials</h2>
             
             <div className="space-y-6">
-              <a href="https://instagram.com/yourcompany" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-gray-200 transition-colors">
-                <Instagram size={24} />
-                <span className="text-2xl tracking-widest">INSTAGRAM</span>
+              <a href="https://instagram.com/yourcompany" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
+                <Instagram size={24} className="text-white" />
+                <span className="text-2xl tracking-widest text-white">INSTAGRAM</span>
               </a>
               
-              <a href="https://facebook.com/yourcompany" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-gray-200 transition-colors">
-                <Facebook size={24} />
-                <span className="text-2xl tracking-widest">FACEBOOK</span>
+              <a href="https://facebook.com/yourcompany" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
+                <Facebook size={24} className="text-white" />
+                <span className="text-2xl tracking-widest text-white">FACEBOOK</span>
               </a>
               
-              <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-gray-200 transition-colors">
-                <Linkedin size={24} />
-                <span className="text-2xl tracking-widest">LINKEDIN</span>
+              <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
+                <Linkedin size={24} className="text-white" />
+                <span className="text-2xl tracking-widest text-white">LINKEDIN</span>
               </a>
             </div>
           </div>

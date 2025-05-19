@@ -18,7 +18,7 @@ export default function LeadershipPrograms() {
     {
       id: 'momentum',
       title: 'Leadership Momentum',
-      description: 'Develop mid-level managers’ strategic, operational, and people-leadership skills, equipping them to drive impactful business results and foster a high-performance culture within their teams.',
+      description: 'Develop mid-level managers strategic, operational, and people-leadership skills, equipping them to drive impactful business results and foster a high-performance culture within their teams.',
       image: '/assets/leadership_11.jpg'
     },
     {
@@ -91,16 +91,16 @@ export default function LeadershipPrograms() {
               }}
             >
               {hoveredProgram === program.id ? (
-                <div className="flex flex-col md:flex-row">
-                  <div className="p-10 md:w-1/2">
+                <div className="flex flex-row">
+                  <div className="p-10 w-2/3">
                     <h3 className="text-3xl font-bold text-white mb-6">{program.title}</h3>
                     <p className="text-lg text-white">{program.description}</p>
                   </div>
-                  <div className="md:w-1/2">
+                  <div className="w-1/3 p-4 flex items-center">
                     <img 
                       src={program.image} 
                       alt={`${program.title} illustration`} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-48 object-cover"
                     />
                   </div>
                 </div>

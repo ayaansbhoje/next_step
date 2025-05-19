@@ -31,25 +31,26 @@ export default function Leadership() {
     };
   }, [controls]);
 
-  // Program sections data
   const programs = [
     {
       title: "Legacy Leadership",
-      description: "Augment leadership skills of senior subject matter experts into well-rounded, visionary leaders who can propel the organization towards enduring success and a meaningful impact for the future"
+      description: "Augment leadership skills of senior subject matter experts into well-rounded, visionary leaders who can propel the organization towards enduring success and a meaningful impact for the future",
+      image: "/assets/leadership_2.jpeg"
     },
     {
       title: "Leadership Momentum",
-      description: "Develop mid-level managers' strategic, operational, and people-leadership skills, equipping them to drive impactful business results and foster a high-performance culture within their teams."
+      description: "Develop mid-level managers' strategic, operational, and people-leadership skills, equipping them to drive impactful business results and foster a high-performance culture within their teams.",
+      image: "/assets/leadership_11.jpg"
     },
     {
-      title: "Legacy Leadership",
-      description: "Augment leadership skills of senior subject matter experts into well-rounded, visionary leaders who can propel the organization towards enduring success and a meaningful impact for the future"
+      title: "Manager Launchpad",
+      description: "Equip new managers with the foundational skills, knowledge, and mindset needed to successfully transition from individual contributors to effective leaders.",
+      image: "/assets/leadership_3.jpeg"
     }
   ];
 
   return (
     <div ref={sectionRef} className="bg-[#DBB965] rounded-lg p-6">
-      {/* Header row */}
       <motion.div 
         className="flex justify-between mb-8"
         initial={{ opacity: 0, y: 20 }}
@@ -74,7 +75,6 @@ export default function Leadership() {
         </div>
       </motion.div>
 
-      {/* Divider */}
       <motion.hr 
         className="border-white my-6"
         initial={{ scaleX: 0 }}
@@ -91,7 +91,6 @@ export default function Leadership() {
         }}
       />
 
-      {/* Program sections with hover effects */}
       {programs.map((program, index) => (
         <motion.div 
           key={index}
@@ -110,7 +109,7 @@ export default function Leadership() {
           }}
         >
           <motion.div 
-            className={`flex mb-8 p-4 rounded-lg transition-all duration-300 ${
+            className={`flex items-center mb-8 p-4 rounded-lg transition-all duration-300 ${
               hoveredIndex === index 
                 ? index % 2 === 0 
                   ? 'bg-black bg-opacity-50' 
@@ -122,14 +121,7 @@ export default function Leadership() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-1/4">
-              <img 
-                src="/api/placeholder/300/200" 
-                alt={`Team for ${program.title}`} 
-                className="rounded-lg"
-              />
-            </div>
-            <div className="w-3/4 pl-8">
+            <div className="flex-1 pr-8">
               <h2 className={`text-3xl font-medium mb-3 ${
                 hoveredIndex === index 
                   ? index % 2 === 0 
@@ -149,9 +141,15 @@ export default function Leadership() {
                 {program.description}
               </p>
             </div>
+            <div className="w-16 h-16 flex-shrink-0">
+              <img 
+                src={program.image} 
+                alt={`Team for ${program.title}`} 
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
           </motion.div>
           
-          {/* Divider (except after the last item) */}
           {index < programs.length - 1 && (
             <motion.hr 
               className="border-white my-6"
@@ -174,4 +172,3 @@ export default function Leadership() {
     </div>
   );
 }
-
