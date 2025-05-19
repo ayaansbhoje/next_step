@@ -11,31 +11,31 @@ const OurApproach = () => {
       id: 1,
       title: "Comprehensive Assessment",
       description: "We partner with you to discover your unique challenges, customize targeted solutions, implement strategic changes, measure tangible outcomes, and transform your organization's potential into lasting success.",
-      image: "/api/placeholder/250/200" // Replace with your actual image path
+      image: "/assets/comp_assesment.jpg" // Replace with your actual image path
     },
     {
       id: 2,
       title: "Customized Solution Design",
       description: "We partner with you to discover your unique challenges, customize targeted solutions, implement strategic changes, measure tangible outcomes, and transform your organization's potential into lasting success.",
-      image: "/api/placeholder/250/200" // Replace with your actual image path
+      image: "/assets/cus_sol.jpeg" // Replace with your actual image path
     },
     {
       id: 3,
       title: "Collaborative Implementation",
       description: "We partner with you to discover your unique challenges, customize targeted solutions, implement strategic changes, measure tangible outcomes, and transform your organization's potential into lasting success.",
-      image: "/api/placeholder/250/200" // Replace with your actual image path
+      image: "/assets/collab_imp.jpeg" // Replace with your actual image path
     },
     {
       id: 4,
       title: "Measurable Results Tracking",
       description: "Every initiative includes clear metrics for success. We establish key performance indicators and systematically track progress, making adjustments as needed to ensure you achieve maximum return on investment.",
-      image: "/api/placeholder/250/200" // Replace with your actual image path
+      image: "/assets/result_track.jpg" // Replace with your actual image path
     },
     {
       id: 5,
       title: "Continuous Optimization",
       description: "Our relationship doesn't end with implementation. We provide ongoing support, refinement, and knowledge transfer to ensure lasting impact. As your organization evolves, our solutions evolve with you.",
-      image: "/api/placeholder/250/200" // Replace with your actual image path
+      image: "/assets/cont_opt.jpg" // Replace with your actual image path
     }
   ];
 

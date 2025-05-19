@@ -18,9 +18,6 @@ export default function ContactUs() {
         {/* Short paragraph */}
         <div className="text-center max-w-3xl mb-16">
           <p className="text-lg">
-            Ready to transform your organization?
-          </p>
-          <p className="text-lg">
             Connect with our team of experts today to start your journey toward exceptional leadership and HR excellence.
           </p>
         </div>

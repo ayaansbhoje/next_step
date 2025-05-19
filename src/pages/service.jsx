@@ -15,12 +15,11 @@ const ServicesPage = () => {
       
       {/* Hero section takes up most of the viewport */}
       <ServicesHero />
+
+      <InstituteSlider />
       
       <HRServices />
 
-      <Leadership />
-
-      <InstituteSlider />
      
       
       {/* Footer at the bottom */}

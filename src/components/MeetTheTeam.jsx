@@ -29,7 +29,7 @@ const MeetTheTeam = () => {
             <div className="relative overflow-hidden rounded-lg w-full aspect-square">
               {/* First team member image */}
               <img 
-                src="/assets/partner_1.jpeg" 
+                src="assets/shabnam_img1.jpg"
                 alt="Shabnam Jussa Gaitonde"
                 className="w-full h-full object-cover"
               />
@@ -37,7 +37,7 @@ const MeetTheTeam = () => {
               {/* Hover overlay with lighter black background */}
               <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 p-6">
                 <p className="text-white text-sm text-center font-medium">
-                Shabnam Jussa Gaitonde is an accomplished Human Resources executive with over 30 years of industry experience. As a former Vice President of Human Resources, she has demonstrated exceptional leadership in managing HR functions for organizations with up to 6000+ employees across diverse sectors including IT, Pharmaceuticals, Chemicals, and Consulting.
+                With 30+ years in HR leadership across ITES, Pharmaceuticals, Chemicals, and Consulting, she brings strategic expertise as a certified Erickson coach and IIM Calcutta EPHRM alumnus. Her core strengths include organizational change management, leadership development, and cultural transformation. She has successfully implemented talent development programs, performance systems, and diversity initiatives while driving succession planning and engagement. As a former CHRO with multicultural experience across India, US, France, Algeria, and China, she combines practical, people-centric approaches with measurable business results—effectively guiding organizations through structural changes and workforce optimization.
                 </p>
               </div>
             </div>
@@ -50,8 +50,7 @@ const MeetTheTeam = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
               <h3 className="text-xl font-bold text-white">Shabnam Jussa Gaitonde</h3>
-              <p className="text-white">Founder Partner</p>
-              <p className="text-white">Human Resources</p>
+              <p className="text-white">Founder Partnerer </p>
             </motion.div>
           </motion.div>
           
@@ -73,7 +72,7 @@ const MeetTheTeam = () => {
               {/* Hover overlay with lighter black background */}
               <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 p-6">
                 <p className="text-white text-sm text-center font-medium">
-                Chandrahas Shetty is a seasoned Human Resources and Business Development executive with over 40 years of industry experience. As a former President in HR and Business Development, he has provided leadership across diverse sectors including pharmaceuticals, gastroenterology, dermatology, and ophthalmology divisions
+                  40+ years in HR and Business Support, with 17 years as President at a major pharmaceutical company. Certified coach and transformation consultant specializing in organizational change and HR-business alignment.Holds a Master's in Personnel Management with advanced studies from Mumbai University, TISS, and XLRI.Known for forward-thinking leadership across healthcare and manufacturing sectors, with expertise in talent development, labor relations, succession planning, and performance management throughout pan-India operations.
                 </p>
               </div>
             </div>
@@ -86,8 +85,7 @@ const MeetTheTeam = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
               <h3 className="text-xl font-bold text-white">Chandrahas Shetty</h3>
-              <p className="text-white">Former President</p>
-              <p className="text-white">Human Resource and Business Development</p>
+              <p className="text-white">Strategic Partner </p>
             </motion.div>
           </motion.div>
         </div>

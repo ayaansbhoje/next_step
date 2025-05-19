@@ -13,19 +13,19 @@ export default function LeadershipPrograms() {
       id: 'legacy',
       title: 'Legacy Leadership',
       description: 'Augment leadership skills of senior subject matter experts into well-rounded, visionary leaders who can propel the organization towards enduring success and a meaningful impact for the future.',
-      image: '/api/placeholder/500/300'
+      image: '/assets/leadership_2.jpeg'
     },
     {
       id: 'momentum',
       title: 'Leadership Momentum',
       description: 'Develop mid-level managers’ strategic, operational, and people-leadership skills, equipping them to drive impactful business results and foster a high-performance culture within their teams.',
-      image: '/api/placeholder/500/300'
+      image: '/assets/leadership_11.jpg'
     },
     {
       id: 'launchpad',
       title: 'Manager Launchpad',
       description: 'Equip new managers with the foundational skills, knowledge, and mindset needed to successfully transition from individual contributors to effective leaders.',
-      image: '/api/placeholder/500/300'
+      image: '/assets/leadership_3.jpeg'
     }
   ];
 
