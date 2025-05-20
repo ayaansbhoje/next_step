@@ -1,8 +1,36 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
 
 export default function ReviewCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const controls = useAnimation();
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        } else {
+          controls.start("hidden");
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [controls]);
 
   // Sample review data
   const reviews = [
@@ -45,50 +73,67 @@ export default function ReviewCarousel() {
   };
 
   return (
-    <div className="bg-black text-white py-16 px-4">
-      <div className="w-full max-w-6xl mx-auto relative">
-        <h1 className="text-3xl font-bold mb-12 text-center">What Our Customers Say</h1>
+    <div ref={sectionRef} className="w-full bg-black">
+      <div className="max-w-6xl mx-auto px-12 py-24 bg-black text-white">
+        {/* Header */}
+        <motion.div 
+          className="mb-24"
+          initial={{ opacity: 0, y: 20 }}
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+          }}
+        >
+          <h2 className="text-4xl font-bold text-center mb-4">What Our Clients Say</h2>
+          <p className="text-xl text-[#DBB965] text-center max-w-3xl mx-auto">
+            Discover how our solutions have helped organizations transform their HR practices
+            and achieve their business objectives.
+          </p>
+        </motion.div>
         
-        <div className="relative overflow-hidden rounded-lg">
-          <div className="flex h-[800px] transition-transform duration-500 ease-in-out" 
-               style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-            {reviews.map((review) => (
-              <div key={review.id} className="min-w-full flex flex-col bg-gradient-to-r from-[#DBB965] to-[#756336] rounded-lg overflow-hidden shadow-2xl">
-                <div className="w-full h-[500px] relative">
-                  <img 
-                    src={review.image} 
-                    alt={`${review.name}'s review`} 
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: 'center 30%' }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+        <div className="relative">
+          <div className="overflow-hidden rounded-lg">
+            <div className="flex h-[650px] transition-transform duration-500 ease-in-out" 
+                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+              {reviews.map((review) => (
+                <div key={review.id} className="min-w-full flex flex-col bg-gradient-to-r from-[#DBB965] to-[#756336] rounded-lg overflow-hidden shadow-2xl">
+                  <div className="w-full h-[420px] relative">
+                    <img 
+                      src={review.image} 
+                      alt={`${review.name}'s review`} 
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: 'center 30%' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                  <div className="w-full p-4 flex flex-col justify-center relative">
+                    <div className="absolute left-4 top-0 w-1 h-10 bg-white/30"></div>
+                    <h2 className="text-2xl font-bold text-white mb-3">{review.name}</h2>
+                    <div className="w-12 h-1 bg-white/80 mb-3"></div>
+                    <p className="text-white italic font-medium leading-relaxed text-lg">"{review.text}"</p>
+                  </div>
                 </div>
-                <div className="w-full p-8 flex flex-col justify-center relative">
-                  <div className="absolute left-8 top-0 w-1 h-16 bg-white/30"></div>
-                  <h2 className="text-2xl font-bold text-white mb-4">{review.name}</h2>
-                  <div className="w-16 h-1 bg-white/80 mb-6"></div>
-                  <p className="text-white italic font-medium leading-relaxed">"{review.text}"</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* Navigation arrows */}
+          <button 
+            onClick={prevSlide}
+            className="absolute top-[200px] -left-16 bg-black p-3 rounded-full transition-all duration-300 hover:border-2 hover:border-[#DBB965] z-10"
+            aria-label="Previous review"
+          >
+            <ChevronLeft size={24} className="text-[#DBB965]" />
+          </button>
+          <button 
+            onClick={nextSlide}
+            className="absolute top-[200px] -right-16 bg-black p-3 rounded-full transition-all duration-300 hover:border-2 hover:border-[#DBB965] z-10"
+            aria-label="Next review"
+          >
+            <ChevronRight size={24} className="text-[#DBB965]" />
+          </button>
         </div>
-        
-        {/* Navigation arrows */}
-        <button 
-          onClick={prevSlide}
-          className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/10 hover:bg-white/30 text-white p-2 rounded-full transition-colors"
-          aria-label="Previous review"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button 
-          onClick={nextSlide}
-          className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/10 hover:bg-white/30 text-white p-2 rounded-full transition-colors"
-          aria-label="Next review"
-        >
-          <ChevronRight size={24} />
-        </button>
         
         {/* Indicator dots */}
         <div className="flex justify-center mt-6 space-x-4">
