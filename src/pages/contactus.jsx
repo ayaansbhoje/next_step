@@ -31,15 +31,15 @@ export default function ContactUs() {
               <Mail size={24} className="text-white" />
               <span className="text-2xl font-bold text-white">Email</span>
             </div>
-            <a href="mailto:thenextstep@gmail.com" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
-              <span className="text-lg text-white">connect@nextstep.co.in</span>
+            <a href="mailto:connect@thenextstep.co.in" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
+              <span className="text-lg text-white">connect@thenextstep.co.in</span>
             </a>
             
             <div className="flex items-center space-x-4 mb-4">
               <Phone size={24} className="text-white" />
               <span className="text-2xl font-bold text-white">Phone no.</span>
             </div>
-            <a href="tel:+91-9619115630" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
+            <a href="tel: +91-9619115630" className="flex items-center space-x-4 hover:text-gray-200 transition-colors text-white">
               <span className="text-lg text-white">+91-9827383883</span>
             </a>
             

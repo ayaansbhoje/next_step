@@ -38,11 +38,11 @@ const Footer = () => {
               <h3 className="text-xl font-semibold mb-4">TO CONTACT US</h3>
               <div className="flex items-center mb-3">
                 <span className="mr-3">☎</span>
-                <span>418 915-066</span>
+                <span>9619115630</span>
               </div>
               <div className="flex items-center mb-4">
                 <span className="mr-3">✉</span>
-                <span>nextstep@gmail.com</span>
+                <span>connect@thenextstep.co.in</span>
               </div>
               <div className="flex space-x-6">
                 <a href="#" style={{ color: 'white' }}>

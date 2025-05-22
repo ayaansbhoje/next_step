@@ -34,6 +34,21 @@ export default function HRServices() {
 
   const services = [
     {
+      title: "Customised Solutions",
+      description: "We understand that every organization is unique, with its own set of challenges and priorities. That's why we collaborate closely with our clients to design and deliver tailored solutions across the entire employee lifecycle. From Talent Acquisition and Talent Development to Talent Management, our expertise enables us to craft strategies that align with your business goals, strengthen people practices, and drive measurable impact.",
+      image: "/assets/customised_solution.jpg"
+    },
+    {
+      title: "Leadership Development",
+      description: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self- awareness, building core leadership competencies. From first-time managers to senior leaders, we support growth at every level through workshops, experiential learning, assessments, coaching, and action planning—ensuring leadership is not just learned, but lived.",
+      image: "/assets/leadership_1.jpg"
+    },
+    {
+      title: "Executive Coaching",
+      description: "Provide structured coaching solutions for professionals at mid and senior levels—to enhance leadership effectiveness, accelerate performance and unlock potential. Our outcome-driven approach aligns individual development with organizational goals, enabling professionals to lead with clarity, confidence, and impact.",
+      image: "/assets/executive_coaching.jpg"
+    },
+    {
       title: "Setting up and enhancing HR policies and practices",
       description: "Build a strong organizational foundation through well-defined HR frameworks that drive consistency, compliance, and clarity across the workforce. Our solutions foster a resilient, engaged, and high-performing employee base—enabling long-term, sustainable growth and success.",
       image: "/assets/setting_up.jpg"
@@ -42,33 +57,22 @@ export default function HRServices() {
       title: "Revamping Performance Management Systems",
       description: "Drive a high-performance culture by designing and implementing robust, transparent performance management practices. Our approach ensures clarity in expectations, aligns individual goals with organizational objectives, and provides a structured pathway for continuous feedback, growth, and accountability—for both employees and leaders.",
       image: "/assets/performance.jpg"
-    },
-    {
-      title: "Customised Solutions",
-      description: "We understand that every organization is unique, with its own set of challenges and priorities. That's why we collaborate closely with our clients to design and deliver tailored solutions across the entire employee lifecycle. From Talent Acquisition and Talent Development to Talent Management, our expertise enables us to craft strategies that align with your business goals, strengthen people practices, and drive measurable impact.",
-      image: "/assets/customised_solution.jpg"
-    },
-    {
-      title: "Executive Coaching",
-      description: "Provide structured coaching solutions for professionals at mid and senior levels—to enhance leadership effectiveness, accelerate performance and unlock potential. Our outcome-driven approach aligns individual development with organizational goals, enabling professionals to lead with clarity, confidence, and impact.",
-      image: "/assets/executive_coaching.jpg"
-    },
-    {
-      title: "Offerings for Education Institutions",
-      description: "We collaborate with educational institutions to support both student and faculty development. For students, we offer customized programs that build the skills, mindset, and confidence needed to transition from campus to corporate life. These sessions focus on leadership, communication, self-awareness, goal setting, and teamwork—empowering students to navigate their career paths with clarity and competence. For faculty members, we conduct specialized training sessions to enhance facilitation skills, mentoring mindsets and leadership presence.",
-      image: "/assets/education.jpg"
-    },
-    {
-      title: "Leadership Development",
-      description: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self- awareness, building core leadership competencies. From first-time managers to senior leaders, we support growth at every level through workshops, experiential learning, assessments, coaching, and action planning—ensuring leadership is not just learned, but lived.",
-      image: "/assets/leadership_1.jpg"
     }
   ];
 
   // Group services into pairs for the carousel
   const slides = [];
   for (let i = 0; i < services.length; i += 2) {
-    slides.push(services.slice(i, i + 2));
+    const slide = services.slice(i, i + 2);
+    // If this is the last slide and it has only one item, add a placeholder
+    if (slide.length === 1) {
+      slide.push({
+        title: "",
+        description: "",
+        image: "/assets/placeholder.jpg"
+      });
+    }
+    slides.push(slide);
   }
 
   const nextSlide = () => {
@@ -138,12 +142,16 @@ export default function HRServices() {
                 <div key={slideIndex} className="w-full flex-shrink-0 px-4">
                   <div className="flex flex-row gap-6">
                     {slide.map((service, serviceIndex) => (
-                      <ServiceCard 
-                        key={serviceIndex}
-                        title={service.title}
-                        description={service.description}
-                        image={service.image}
-                      />
+                      service.title ? (
+                        <ServiceCard 
+                          key={serviceIndex}
+                          title={service.title}
+                          description={service.description}
+                          image={service.image}
+                        />
+                      ) : (
+                        <div key={serviceIndex} className="flex-1" /> // Empty placeholder div
+                      )
                     ))}
                   </div>
                 </div>

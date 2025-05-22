@@ -10,31 +10,26 @@ const OurApproach = () => {
     {
       id: 1,
       title: "Comprehensive Assessment",
-      description: "We partner with you to discover your unique challenges, customize targeted solutions, implement strategic changes, measure tangible outcomes, and transform your organization's potential into lasting success.",
       image: "/assets/comp_assesment.jpg" // Replace with your actual image path
     },
     {
       id: 2,
       title: "Customized Solution Design",
-      description: "We partner with you to discover your unique challenges, customize targeted solutions, implement strategic changes, measure tangible outcomes, and transform your organization's potential into lasting success.",
       image: "/assets/cus_sol.jpeg" // Replace with your actual image path
     },
     {
       id: 3,
       title: "Collaborative Implementation",
-      description: "We partner with you to discover your unique challenges, customize targeted solutions, implement strategic changes, measure tangible outcomes, and transform your organization's potential into lasting success.",
       image: "/assets/collab_imp.jpeg" // Replace with your actual image path
     },
     {
       id: 4,
       title: "Measurable Results Tracking",
-      description: "Every initiative includes clear metrics for success. We establish key performance indicators and systematically track progress, making adjustments as needed to ensure you achieve maximum return on investment.",
       image: "/assets/result_track.jpg" // Replace with your actual image path
     },
     {
       id: 5,
       title: "Continuous Optimization",
-      description: "Our relationship doesn't end with implementation. We provide ongoing support, refinement, and knowledge transfer to ensure lasting impact. As your organization evolves, our solutions evolve with you.",
       image: "/assets/cont_opt.jpg" // Replace with your actual image path
     }
   ];
@@ -110,17 +105,28 @@ const OurApproach = () => {
               
               {/* Right Side - Content */}
               <motion.div 
-                className="w-5/12 pl-36"
+                className="w-5/12 pl-36 -mt-20"
                 initial={{ opacity: 0, x: 50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                 transition={{ duration: 0.8, delay: 1.2 + (index * 0.2), ease: "easeOut" }}
               >
-                <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-sm text-[#DBB965]">{step.description}</p>
+                <h3 className="text-4xl font-bold text-white mb-3">{step.title}</h3>
               </motion.div>
             </motion.div>
+
+            
           ))}
         </div>
+
+        {/* Closing Text */}
+        <motion.p 
+          className="text-center text-[#DBB965] mt-16 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
+        >
+          Our relationship doesn't end with implementation. We provide ongoing support, refinement, and knowledge transfer to ensure lasting impact. As your organization evolves, our solutions evolve with you.
+        </motion.p>
       </div>
     </div>
   );

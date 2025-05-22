@@ -17,7 +17,7 @@ const AboutUsHero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <img 
-            src="/assets/banner_1.jpg" 
+            src="/assets/aboutus_hero.jpg" 
             alt="Modern office interior with bridge walkway" 
             className="w-full h-full object-cover"
           />

@@ -37,25 +37,25 @@ export default function ReviewCarousel() {
     {
       id: 1,
       name: "Sarah Johnson",
-      image: "/assets/review-1.jpg",
+      image: "/assets/test_1.jpg",
       text: "The service was exceptional from start to finish. The team went above and beyond to ensure our needs were met. I would highly recommend them to anyone looking for quality and reliability."
     },
     {
       id: 2,
       name: "Michael Chen",
-      image: "/assets/review_4.jpg",
+      image: "/assets/test_2.jpg",
       text: "I was impressed by the attention to detail and professionalism. They delivered exactly what they promised and on time. Will definitely be using their services again in the future."
     },
     {
       id: 3,
       name: "Emma Rodriguez",
-      image: "/assets/review_2.jpg",
+      image: "/assets/test_3.jpg",
       text: "Absolutely incredible experience! The product quality exceeded my expectations and the customer service was top-notch. They made the entire process smooth and enjoyable."
     },
     {
       id: 4,
       name: "David Thompson",
-      image: "/assets/review_3.jpg",
+      image: "/assets/test_4.jpg",
       text: "I've been a customer for years and have never been disappointed. Their commitment to excellence is evident in everything they do. I couldn't imagine going anywhere else."
     }
   ];
