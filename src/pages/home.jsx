@@ -17,7 +17,7 @@ function Home() {
       <HeroSection />
       <AboutUs />
       <OurServices />
-      <LeadershipPrograms />
+      
       <ReviewSection />
       <Footer />
       <div className="content">

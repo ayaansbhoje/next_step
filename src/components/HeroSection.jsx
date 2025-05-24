@@ -110,7 +110,7 @@ const HeroSection = () => {
           )}
         </AnimatePresence>
         
-        {/* Button - completely hidden until typing is complete */}
+        {/* Button */}
         <AnimatePresence>
           {lastLineComplete && (
             <motion.button

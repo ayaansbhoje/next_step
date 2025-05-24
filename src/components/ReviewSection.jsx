@@ -68,10 +68,10 @@ export default function ReviewSection() {
   }, [controls]);
 
   return (
-    <div ref={sectionRef} className="w-full py-10 bg-white flex items-center">
+    <div ref={sectionRef} className="w-full py-6 md:py-10 bg-white flex items-center">
       {/* Black box flush with the left edge */}
       <motion.div 
-        className="bg-black p-8 w-80 flex items-center h-72 z-20 rounded-r-lg"
+        className="bg-black p-4 md:p-8 w-52 md:w-80 flex items-center h-52 md:h-72 z-20 rounded-r-lg"
         initial={{ opacity: 0, x: -50 }}
         animate={controls}
         variants={{
@@ -85,7 +85,7 @@ export default function ReviewSection() {
           }
         }}
       >
-        <h2 className="text-3xl font-bold text-white text-left leading-tight">
+        <h2 className="text-lg md:text-3xl font-bold text-white text-left leading-tight">
           Wanna know<br />what our<br />clients think?
         </h2>
       </motion.div>
@@ -118,18 +118,18 @@ export default function ReviewSection() {
                   {duplicatedReviews.map((review, index) => (
                     <div 
                       key={`${review.id}-${index}`}
-                      className="min-w-80 max-w-80 p-2 flex-shrink-0"
+                      className="min-w-64 md:min-w-80 max-w-64 md:max-w-80 p-2 flex-shrink-0"
                     >
                       <div 
-                        className="p-8 rounded-lg h-64 flex flex-col justify-between shadow-lg"
+                        className="p-4 md:p-8 rounded-lg h-48 md:h-64 flex flex-col justify-between shadow-lg"
                         style={{ backgroundColor: '#DBB965' }}
                       >
-                        <p className="text-base mb-4 font-medium">
+                        <p className="text-xs md:text-base mb-2 md:mb-4 font-medium">
                           "{review.quote}"
                         </p>
                         <div>
-                          <p className="font-bold text-sm">-{review.author},</p>
-                          <p className="text-sm">{review.position}</p>
+                          <p className="font-bold text-[10px] md:text-sm">-{review.author},</p>
+                          <p className="text-[10px] md:text-sm">{review.position}</p>
                         </div>
                       </div>
                     </div>

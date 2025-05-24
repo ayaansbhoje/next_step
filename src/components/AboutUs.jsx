@@ -32,7 +32,7 @@ const AboutUs = () => {
         }
       },
       {
-        threshold: 0.3, // Trigger when 30% of the section is visible
+        threshold: 0.3,
       }
     );
 
@@ -48,14 +48,14 @@ const AboutUs = () => {
   }, [controls]);
 
   return (
-    <div ref={sectionRef} className="w-full py-24 px-4 md:px-12 lg:px-20 bg-white">
+    <div ref={sectionRef} className="w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* First section - Our Story with yellow line below */}
-        <div className="mb-16">
+        <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex flex-col items-start">
             {/* Our Story heading */}
             <motion.h2 
-              className="text-5xl font-bold mb-4 text-black"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-black"
               initial={{ opacity: 0 }}
               animate={controls}
               variants={{
@@ -67,7 +67,7 @@ const AboutUs = () => {
             </motion.h2>
             
             {/* Vertical yellow line below heading */}
-            <div className="relative h-40 mb-4">
+            <div className="relative h-32 sm:h-40 mb-3 sm:mb-4">
               <motion.div 
                 className="absolute left-0 top-0 w-1 bg-yellow-400"
                 initial="hidden"
@@ -98,7 +98,7 @@ const AboutUs = () => {
           
           {/* Text below the yellow line */}
           <motion.p 
-            className="text-2xl text-yellow-600 w-full"
+            className="text-lg sm:text-xl md:text-2xl text-yellow-600 w-full"
             initial="hidden"
             animate={controls}
             variants={{
@@ -112,9 +112,9 @@ const AboutUs = () => {
         </div>
         
         {/* Second section - Black line on right side */}
-        <div className="mb-16 flex flex-col items-end">
+        <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-end">
           {/* Vertical black line on right */}
-          <div className="relative h-40 mb-4">
+          <div className="relative h-32 sm:h-40 mb-3 sm:mb-4">
             <motion.div 
               className="absolute right-0 top-0 w-1 bg-black"
               initial="hidden"
@@ -144,7 +144,7 @@ const AboutUs = () => {
           
           {/* Text below the black line, right-aligned */}
           <motion.p 
-            className="text-2xl text-black w-full text-right"
+            className="text-lg sm:text-xl md:text-2xl text-black w-full text-right"
             initial="hidden"
             animate={controls}
             variants={{
@@ -161,7 +161,7 @@ const AboutUs = () => {
         {/* Third section - Yellow line in center */}
         <div className="flex flex-col items-center">
           {/* Vertical yellow line in center */}
-          <div className="relative h-40 mb-4">
+          <div className="relative h-32 sm:h-40 mb-3 sm:mb-4">
             <motion.div 
               className="absolute left-1/2 top-0 w-1 bg-yellow-400 -translate-x-1/2"
               initial="hidden"
@@ -191,7 +191,7 @@ const AboutUs = () => {
           
           {/* Text below the center yellow line */}
           <motion.p 
-            className="text-2xl text-yellow-600 w-full text-center"
+            className="text-lg sm:text-xl md:text-2xl text-yellow-600 w-full text-center"
             initial="hidden"
             animate={controls}
             variants={{
