@@ -37,7 +37,20 @@ const HeroSection = () => {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [showTypewriter, setShowTypewriter] = useState(false);
   const [lastLineComplete, setLastLineComplete] = useState(false);
-  
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Check screen size on mount and resize
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   // Start the animation sequence after component mounts
   useEffect(() => {
     // Delay before starting the animation sequence
@@ -87,14 +100,29 @@ const HeroSection = () => {
     }
   };
 
+  // Animation variants for horizontal scrolling (mobile only)
+  const horizontalScrollVariants = {
+    animate: {
+      x: [0, -480], // Width of boxes + gaps for seamless loop
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 20,
+          ease: "linear"
+        }
+      }
+    }
+  };
+
   return (
-    <div className="w-screen h-screen flex flex-col lg:flex-row items-center justify-between px-8 lg:px-20 pt-48 bg-transparent relative overflow-hidden">
+    <div className="w-screen h-screen flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-20 pt-24 sm:pt-32 md:pt-40 lg:pt-48 bg-transparent relative overflow-hidden">
       {/* Left Content */}
-      <div className="w-full lg:w-1/2 text-white z-10 mt-20 ml-60">
+      <div className="w-full lg:w-1/2 text-white z-10 mt-8 sm:mt-12 md:mt-16 lg:mt-20 lg:ml-60 text-center lg:text-left">
         <AnimatePresence>
           {showTypewriter && (
             <motion.h1 
-              className="text-3xl md:text-3xl font-bold leading-tight mb-4 -mt-8"
+              className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold leading-tight mb-4 lg:-mt-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -125,168 +153,410 @@ const HeroSection = () => {
         </AnimatePresence>
       </div>
       
-      {/* Image boxes replacing grey boxes */}
-      <AnimatePresence>
-        {lastLineComplete && (
-          <motion.div 
-            className="absolute right-32 top-1/2 transform -translate-y-1/2 z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Right Image Boxes with vertical scrolling */}
-            <div className="flex gap-12 h-full overflow-hidden">
-              {/* Left Column */}
+      {/* Desktop Image boxes with vertical scrolling */}
+      {isDesktop && (
+        <AnimatePresence>
+          {lastLineComplete && (
+            <motion.div 
+              className="absolute right-32 top-1/2 transform -translate-y-1/2 z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Right Image Boxes with vertical scrolling */}
+              <div className="flex gap-12 h-full overflow-hidden">
+                {/* Left Column */}
+                <motion.div
+                  className="flex flex-col gap-4"
+                  variants={leftColumnVariants}
+                  animate="animate"
+                >
+                  {/* Duplicate boxes to create seamless loop */}
+                  <motion.div
+                    variants={fadeIn("right", 0.1)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  >
+                    <img src="/assets/hero_img1.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("right", 0.3)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  >
+                    <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("right", 0.5)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  >
+                    <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("right", 0.7)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  >
+                    <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  {/* Duplicated boxes for seamless loop */}
+                  <motion.div
+                    variants={fadeIn("right", 0.1)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  >
+                    <img src="/assets/hero_img1.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("right", 0.3)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  >
+                    <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("right", 0.5)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  >
+                    <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("right", 0.7)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  >
+                    <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                </motion.div>
+                
+                {/* Right Column */}
+                <motion.div
+                  className="flex flex-col gap-4"
+                  variants={rightColumnVariants}
+                  animate="animate"
+                >
+                  {/* Duplicate boxes to create seamless loop */}
+                  <motion.div
+                    variants={fadeIn("left", 0.2)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  >
+                    <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("left", 0.4)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  >
+                    <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("left", 0.6)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  >
+                    <img src="/assets/hero_img4.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("left", 0.8)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  >
+                    <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  {/* Duplicated boxes for seamless loop */}
+                  <motion.div
+                    variants={fadeIn("left", 0.2)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  >
+                    <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("left", 0.4)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  >
+                    <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("left", 0.6)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  >
+                    <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                  <motion.div
+                    variants={fadeIn("left", 0.8)}
+                    initial="hidden"
+                    animate="show"
+                    className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  >
+                    <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
+
+      {/* Mobile Image boxes with horizontal scrolling */}
+      {!isDesktop && (
+        <AnimatePresence>
+          {lastLineComplete && (
+            <motion.div 
+              className="absolute bottom-8 left-0 right-0 z-10 overflow-hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* First Row */}
               <motion.div
-                className="flex flex-col gap-4"
-                variants={leftColumnVariants}
+                className="flex gap-3 w-max mb-3"
+                variants={horizontalScrollVariants}
                 animate="animate"
               >
-                {/* Duplicate boxes to create seamless loop */}
+                {/* First set of images */}
                 <motion.div
-                  variants={fadeIn("right", 0.1)}
+                  variants={fadeIn("up", 0.1)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
                   <img src="/assets/hero_img1.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
-                  variants={fadeIn("right", 0.3)}
+                  variants={fadeIn("up", 0.2)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
-                >
-                  <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
-                </motion.div>
-                <motion.div
-                  variants={fadeIn("right", 0.5)}
-                  initial="hidden"
-                  animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
-                >
-                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
-                </motion.div>
-                <motion.div
-                  variants={fadeIn("right", 0.7)}
-                  initial="hidden"
-                  animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
-                >
-                  <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
-                </motion.div>
-                {/* Duplicated boxes for seamless loop */}
-                <motion.div
-                  variants={fadeIn("right", 0.1)}
-                  initial="hidden"
-                  animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
-                >
-                  <img src="/assets/hero_img1.jpg" alt="Featured content" className="w-full h-full object-cover" />
-                </motion.div>
-                <motion.div
-                  variants={fadeIn("right", 0.3)}
-                  initial="hidden"
-                  animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
-                >
-                  <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
-                </motion.div>
-                <motion.div
-                  variants={fadeIn("right", 0.5)}
-                  initial="hidden"
-                  animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
-                >
-                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
-                </motion.div>
-                <motion.div
-                  variants={fadeIn("right", 0.7)}
-                  initial="hidden"
-                  animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
-                >
-                  <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
-                </motion.div>
-              </motion.div>
-              
-              {/* Right Column */}
-              <motion.div
-                className="flex flex-col gap-4"
-                variants={rightColumnVariants}
-                animate="animate"
-              >
-                {/* Duplicate boxes to create seamless loop */}
-                <motion.div
-                  variants={fadeIn("left", 0.2)}
-                  initial="hidden"
-                  animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
                   <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
-                  variants={fadeIn("left", 0.4)}
+                  variants={fadeIn("up", 0.3)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.4)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.5)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
                   <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
-                  variants={fadeIn("left", 0.6)}
+                  variants={fadeIn("up", 0.6)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img4.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                
+                {/* Duplicate set for seamless loop */}
+                <motion.div
+                  variants={fadeIn("up", 0.1)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img1.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.2)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.3)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img5.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.4)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.5)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.6)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img4.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+              </motion.div>
+
+              {/* Second Row - Scrolling in opposite direction */}
+              <motion.div
+                className="flex gap-3 w-max"
+                variants={{
+                  animate: {
+                    x: [-480, 0], // Reverse direction
+                    transition: {
+                      x: {
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        duration: 20,
+                        ease: "linear"
+                      }
+                    }
+                  }
+                }}
+                animate="animate"
+              >
+                {/* First set of images */}
+                <motion.div
+                  variants={fadeIn("up", 0.1)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.2)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.3)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
                   <img src="/assets/hero_img4.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
-                  variants={fadeIn("left", 0.8)}
+                  variants={fadeIn("up", 0.4)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
-                  <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img6.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
-                {/* Duplicated boxes for seamless loop */}
                 <motion.div
-                  variants={fadeIn("left", 0.2)}
+                  variants={fadeIn("up", 0.5)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img1.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.6)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
                   <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
+                
+                {/* Duplicate set for seamless loop */}
                 <motion.div
-                  variants={fadeIn("left", 0.4)}
+                  variants={fadeIn("up", 0.1)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
-                  <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
-                  variants={fadeIn("left", 0.6)}
+                  variants={fadeIn("up", 0.2)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
                   <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
-                  variants={fadeIn("left", 0.8)}
+                  variants={fadeIn("up", 0.3)}
                   initial="hidden"
                   animate="show"
-                  className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
-                  <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img4.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.4)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img6.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.5)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img1.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("up", 0.6)}
+                  initial="hidden"
+                  animate="show"
+                  className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                >
+                  <img src="/assets/hero_img3.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
               </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </div>
   );
 };
