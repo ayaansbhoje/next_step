@@ -82,7 +82,7 @@ export default function InstituteSlider() {
       <div className="max-w-6xl mx-auto px-12 py-12 bg-black text-white">
         {/* Header */}
         <motion.h1 
-          className="text-4xl font-bold text-center mb-16"
+          className="text-xl font-bold text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
           variants={{
@@ -151,8 +151,8 @@ export default function InstituteSlider() {
                           transition: { duration: 0.2 }
                         }}
                       >
-                        <h3 className="text-xl font-bold mb-4 text-center">{program.title}</h3>
-                        <p className="text-sm text-center leading-tight">{program.content}</p>
+                        <h3 className="text-lg font-bold mb-4 text-center">{program.title}</h3>
+                        <p className="text-xs text-center leading-tight">{program.content}</p>
                       </motion.div>
                     ))}
                   </div>

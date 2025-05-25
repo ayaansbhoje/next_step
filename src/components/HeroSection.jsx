@@ -116,13 +116,13 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="w-screen h-screen flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-20 pt-24 sm:pt-32 md:pt-40 lg:pt-48 bg-transparent relative overflow-hidden">
+    <div className="w-screen h-screen flex flex-col lg:flex-row items-center justify-between px-0 sm:px-2 md:px-4 lg:px-8 pt-24 sm:pt-32 md:pt-40 lg:pt-48 bg-transparent relative overflow-hidden">
       {/* Left Content */}
-      <div className="w-full lg:w-1/2 text-white z-10 mt-8 sm:mt-12 md:mt-16 lg:mt-20 lg:ml-60 text-center lg:text-left">
+      <div className="w-full lg:w-1/2 text-white z-10 mt-8 sm:mt-12 md:mt-16 lg:mt-20 lg:ml-12 lg:pl-0 text-center lg:text-left">
         <AnimatePresence>
           {showTypewriter && (
             <motion.h1 
-              className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold leading-tight mb-4 lg:-mt-8"
+              className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl lg:ml-54 font-bold leading-tight mb-4 lg:-mt-8 lg:text-left"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -145,7 +145,7 @@ const HeroSection = () => {
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               animate="show"
-              className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded text-sm transition-colors"
+              className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium lg:mr-220 py-2 px-4 rounded text-sm transition-colors"
             >
               Get in touch
             </motion.button>
@@ -194,7 +194,7 @@ const HeroSection = () => {
                     animate="show"
                     className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                   >
-                    <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                    <img src="/assets/hero_img9.jpg" alt="Featured content" className="w-full h-full object-cover" />
                   </motion.div>
                   <motion.div
                     variants={fadeIn("right", 0.7)}
@@ -202,7 +202,7 @@ const HeroSection = () => {
                     animate="show"
                     className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                   >
-                    <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                    <img src="/assets/hero_img10.jpg" alt="Featured content" className="w-full h-full object-cover" />
                   </motion.div>
                   {/* Duplicated boxes for seamless loop */}
                   <motion.div
@@ -227,7 +227,7 @@ const HeroSection = () => {
                     animate="show"
                     className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                   >
-                    <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                    <img src="/assets/hero_img9.jpg" alt="Featured content" className="w-full h-full object-cover" />
                   </motion.div>
                   <motion.div
                     variants={fadeIn("right", 0.7)}
@@ -235,7 +235,7 @@ const HeroSection = () => {
                     animate="show"
                     className="w-40 h-52 rounded-2xl shadow-md overflow-hidden"
                   >
-                    <img src="/assets/hero_img8.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                    <img src="/assets/hero_img10.jpg" alt="Featured content" className="w-full h-full object-cover" />
                   </motion.div>
                 </motion.div>
                 
@@ -301,7 +301,7 @@ const HeroSection = () => {
                     animate="show"
                     className="w-40 h-52 rounded-2xl shadow-md overflow-hidden justify-end"
                   >
-                    <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                    <img src="/assets/hero_img4.jpg" alt="Featured content" className="w-full h-full object-cover" />
                   </motion.div>
                   <motion.div
                     variants={fadeIn("left", 0.8)}
@@ -365,7 +365,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
-                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img9.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("up", 0.5)}
@@ -415,7 +415,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
-                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img9.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("up", 0.5)}
@@ -468,7 +468,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
-                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("up", 0.3)}
@@ -518,7 +518,7 @@ const HeroSection = () => {
                   animate="show"
                   className="w-20 h-28 sm:w-24 sm:h-32 rounded-xl shadow-md overflow-hidden flex-shrink-0"
                 >
-                  <img src="/assets/hero_img2.jpg" alt="Featured content" className="w-full h-full object-cover" />
+                  <img src="/assets/hero_img7.jpg" alt="Featured content" className="w-full h-full object-cover" />
                 </motion.div>
                 <motion.div
                   variants={fadeIn("up", 0.3)}

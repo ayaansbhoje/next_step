@@ -66,11 +66,12 @@ const OurValuesComponent = () => {
   };
 
   return (     
-    <div className="bg-[#DBB965] min-h-[400px] flex items-center py-16">       
+    <div ref={ref} style={{
+      background: "linear-gradient(135deg, #DBB965 0%, #C4A45C 25%, #9B7D3A 50%, #756336 75%, #5A4B2A 100%)"
+    }} className="min-h-[400px] flex items-center py-16">       
       <div className="max-w-5xl mx-auto w-full flex flex-row items-center gap-12">         
         {/* Left: Header */}         
         <motion.div
-          ref={ref}
           initial="hidden"
           animate={controls}
           variants={containerVariants}

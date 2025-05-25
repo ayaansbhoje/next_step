@@ -9,26 +9,26 @@ const OurServices = () => {
   const services = [
     {
       id: 1,
-      title: "Setting-up and enhancing existing HR Practices",
-      description: "Establish a structured HR framework that ensures organizational consistency, drives compliance, and cultivates a high-performing workforce, enabling sustainable business growth.",
+      title: "Customised Solutions",
+      description: "Tailored HR Solutions: Developing Comprehensive People Strategies Precisely Aligned with Your Unique Organizational Goals Across Talent Acquisition, Development, and Management Ecosystems",
       position: "top-8 sm:top-16 left-4 sm:left-6"
     },
     {
       id: 2,
-      title: "Advanced Performance Management Solutions",
-      description: "Cultivate a High-Performance Organizational Culture Through Robust, Transparent Practices That Provide Strategic Guidance and Defined Pathways for Employees and Leaders",
+      title: "Leadership Development",
+      description: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self-awareness, building core leadership competencies.",
       position: "top-8 sm:top-16 right-4 sm:right-0"
     },
     {
       id: 3,
-      title: "Customised Solutions",
-      description: "Tailored HR Solutions: Developing Comprehensive People Strategies Precisely Aligned with Your Unique Organizational Goals Across Talent Acquisition, Development, and Management Ecosystems",
+      title: "Executive Coaching",
+      description: "Provide structured coaching solutions for professionals at mid and senior levels—to enhance leadership effectiveness, accelerate performance and unlock potential. Our outcome-driven approach aligns individual development with organizational goals, enabling professionals to lead with clarity, confidence, and impact.",
       position: "top-[350px] sm:top-88 left-4 sm:left-1/5"
     },
     {
       id: 4,
-      title: "Executive Coaching",
-      description: "Provide structured coaching solutions for professionals at mid and senior levels—to enhance leadership effectiveness, accelerate performance and unlock potential. Our outcome-driven approach aligns individual development with organizational goals, enabling professionals to lead with clarity, confidence, and impact.",
+      title: "Setting-up and enhancing existing HR Practices",
+      description: "Establish a structured HR framework that ensures organizational consistency, drives compliance, and cultivates a high-performing workforce, enabling sustainable business growth.",
       position: "top-[350px] sm:top-88 right-4 sm:right-1/5"
     }
   ];
@@ -58,7 +58,7 @@ const OurServices = () => {
     <section ref={sectionRef} className="bg-black text-white py-12 relative w-full overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.h2 
-          className="text-2xl sm:text-2xl md:text-3xl font-bold mb-6 text-white text-center"
+          className="text-2xl sm:text-2xl md:text-5xl font-bold mb-6 text-white text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
           variants={{

@@ -14,8 +14,9 @@ const AboutUsPage = () => {
       <AboutUsHero />
       <MissionWhyChooseUs />
       <MeetTheTeam />
-      <OurApproach /> {/* Added the Our Approach component */}
       <Ourvalues />
+      <OurApproach /> {/* Added the Our Approach component */}
+      
       <Footer />
       
       {/* You can add more content sections below if needed */}

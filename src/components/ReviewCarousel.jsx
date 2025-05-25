@@ -85,11 +85,8 @@ export default function ReviewCarousel() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
           }}
         >
-          <h2 className="text-4xl font-bold text-center mb-4">What Our Clients Say</h2>
-          <p className="text-xl text-[#DBB965] text-center max-w-3xl mx-auto">
-            Discover how our solutions have helped organizations transform their HR practices
-            and achieve their business objectives.
-          </p>
+          <h2 className="text-5xl font-bold text-center mb-4">What Our Clients Say</h2>
+          
         </motion.div>
         
         <div className="relative">

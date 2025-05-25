@@ -6,7 +6,7 @@ const MeetTheTeam = () => {
   const isInView = useInView(ref, { once: false, amount: 0.3 });
 
   return (
-    <div ref={ref} style={{backgroundColor: '#DBB965'}} className="py-16">
+    <div ref={ref} style={{background: "linear-gradient(to bottom right, #DBB965 0%, #756336 100%)"}} className="py-16">
       <div className="max-w-5xl mx-auto px-4">
         <motion.h2 
           className="text-4xl font-bold text-white text-center mb-12"
@@ -14,11 +14,11 @@ const MeetTheTeam = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          MEET THE TEAM
+          OUR LEADERS
         </motion.h2>
         
         {/* Fixed grid layout with exactly two columns */}
-        <div className="grid grid-cols-2 gap-16 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 gap-12 max-w-3xl mx-auto">
           {/* First Team Member */}
           <motion.div 
             className="group relative"
@@ -35,9 +35,9 @@ const MeetTheTeam = () => {
               />
               
               {/* Hover overlay with lighter black background */}
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 p-6">
-                <p className="text-white text-sm text-center font-medium">
-                With 30+ years in HR leadership across ITES, Pharmaceuticals, Chemicals, and Consulting, she brings strategic expertise as a certified Erickson coach and IIM Calcutta EPHRM alumnus. Her core strengths include organizational change management, leadership development, and cultural transformation. She has successfully implemented talent development programs, performance systems, and diversity initiatives while driving succession planning and engagement. As a former CHRO with multicultural experience across India, US, France, Algeria, and China, she combines practical, people-centric approaches with measurable business results—effectively guiding organizations through structural changes and workforce optimization.
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 p-4">
+                <p className="text-white text-xs text-center font-medium">
+                With over 30 years of experience in Human Resources, she has led people strategies for mid and large sized organizations across diverse sectors including ITES, Pharmaceuticals, Chemicals, and Consulting. A certified coach from Erickson Coaching and an alumnus of IIM Calcutta, she brings deep expertise in aligning HR with business goals. Her strengths lie in leading organizational change, building leadership pipelines, and transforming workplace culture. She has conceptualized and implemented impactful talent development, performance management, and diversity & inclusion programs, while also driving succession planning and engagement strategies.Having held senior HR leadership positions, including CHRO roles, she is known for her practical, people-centric approach and her ability to coach individuals and teams to achieve measurable results. Her work spans multicultural environments across geographies — steering organizations through structural changes and right-sizing initiatives.
                 </p>
               </div>
             </div>
@@ -50,7 +50,7 @@ const MeetTheTeam = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
               <h3 className="text-xl font-bold text-white">Shabnam Jussa Gaitonde</h3>
-              <p className="text-white">Founder Partnerer </p>
+              <p className="text-white">Founder Partner </p>
             </motion.div>
           </motion.div>
           
@@ -64,15 +64,15 @@ const MeetTheTeam = () => {
             <div className="relative overflow-hidden rounded-lg w-full aspect-square">
               {/* Second team member image */}
               <img 
-                src="/assets/partner_2.jpeg" 
+                src="/assets/cs_pic.jpg" 
                 alt="Chandrahas Shetty"
                 className="w-full h-full object-cover"
               />
               
               {/* Hover overlay with lighter black background */}
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 p-6">
-                <p className="text-white text-sm text-center font-medium">
-                  40+ years in HR and Business Support, with 17 years as President at a major pharmaceutical company. Certified coach and transformation consultant specializing in organizational change and HR-business alignment.Holds a Master's in Personnel Management with advanced studies from Mumbai University, TISS, and XLRI.Known for forward-thinking leadership across healthcare and manufacturing sectors, with expertise in talent development, labor relations, succession planning, and performance management throughout pan-India operations.
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 p-4">
+                <p className="text-white text-xs text-center font-medium">
+                  With over four decades of diverse experience in Human Resources and Business Support, including 17 years as President of HR and Business Support of a large pharmaceuticals company, he brings a rare blend of strategic insight and hands-on leadership. A certified coach and transformation consultant, he has led large-scale organizational change initiatives, implemented digital systems, and played a pivotal role in aligning HR with core business operations. His academic credentials include a Master's in Personnel Management, advanced HR studies from the University of Mumbai and TISS, and a leadership program from XLRI. Known for his future-focused mindset, he has consistently introduced innovative strategies, built leadership pipelines and improved employee engagement through structured interventions. His experience spans multiple sectors and he has supported pan-India operations with a strong emphasis on talent development, union negotiations, succession planning, and performance benchmarking.
                 </p>
               </div>
             </div>
