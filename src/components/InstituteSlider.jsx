@@ -38,24 +38,24 @@ export default function InstituteSlider() {
       content: "Designed as per Institute's specific needs catering to the specific requirement of the Institute and its students. Programs are co-created with the institute, engaging faculty members to ensure continuity."
     },
     {
-      title: "Developing Leadership Capability",
-      content: "Amongst students to ensure that they develop the mindset and competencies required to emerge as future leaders. The workshop will cover what is leadership, different leadership styles and how to develop leadership capability."
+      title: "Building Leadership Capability",
+      content: "We help students cultivate a future-ready mindset by building critical leadership skills such as self-awareness, decision-making, collaboration, and accountability. These sessions are designed to shape confident, responsible individuals who can lead with empathy and purpose."
     },
     {
-      title: "Communication Skills Training",
-      content: "Focusing on Verbal and written communication, Active listening, Public speaking and Professional Etiquette."
+      title: "Communication Skills Enhancement",
+      content: "Our comprehensive communication modules cover verbal and non-verbal communication, active listening, public speaking, and professional etiquette. The goal is to empower students to express themselves clearly and confidently across personal, academic and professional settings."
     },
     {
       title: "Corporate Culture Exposure",
-      content: "Preparing students for work environment and helping them develop the competencies required to succeed."
+      content: "We provide students with insights into corporate work environments, preparing them for the transition from campus to career. Sessions focus on workplace dynamics, behavioural expectations, organizational structures and the skills needed to thrive in a professional setting."
     },
     {
-      title: "Career Readiness Workshops",
-      content: "Focusing on Resume writing, Interview skills, including mock interviews and networking strategies to create avenues for job opportunities."
+      title: "Career Readiness Programs",
+      content: "These hands-on workshops prepare students for job opportunities through practical guidance on resume writing, interview skills (including mock interviews), and effective strategies for creating and seizing job opportunities. Our approach enhances their confidence and job market readiness."
     },
     {
-      title: "Faculty Training Program",
-      content: "To develop essential skills required to succeed in VUCA (volatile, uncertain, complex and ambiguous) environment."
+      title: "Faculty Training Programs",
+      content: "Designed for educators, these programs build capabilities to thrive in today’s VUCA (Volatile, Uncertain, Complex, Ambiguous) environment. We focus on developing mentoring skills, adaptability, and leadership presence - empowering faculty to enhance their influence in academic settings and beyond."
     }
   ];
 
@@ -81,8 +81,8 @@ export default function InstituteSlider() {
     <div ref={sectionRef} className="w-full bg-black">
       <div className="max-w-6xl mx-auto px-12 py-12 bg-black text-white">
         {/* Header */}
-        <motion.h1 
-          className="text-xl font-bold text-center mb-16"
+        <motion.div 
+          className="mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
           variants={{
@@ -90,8 +90,11 @@ export default function InstituteSlider() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
           }}
         >
-          Signature Programs for Institutes
-        </motion.h1>
+          <h2 className="text-4xl font-bold text-center mb-4">Offerings for Educational Institutes</h2>
+          <p className="text-base text-[#DBB965] text-center max-w-3xl mx-auto">
+          We collaborate closely with educational institutions to design and deliver customized programs that align with their specific goals. Each program is co-created by actively involving with faculty, ensuring relevance, continuity and lasting impact on students' development.
+          </p>
+        </motion.div>
         
         {/* Carousel Container */}
         <div className="relative">
