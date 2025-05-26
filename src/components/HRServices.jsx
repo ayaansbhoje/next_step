@@ -35,27 +35,27 @@ export default function HRServices() {
   const services = [
     {
       title: "Customised Solutions",
-      description: "We understand that every organization is unique, with its own set of challenges and priorities. That's why we collaborate closely with our clients to design and deliver tailored solutions across the entire employee lifecycle. From Talent Acquisition and Talent Development to Talent Management, our expertise enables us to craft strategies that align with your business goals, strengthen people practices, and drive measurable impact.",
+      content: "We understand that every organization is unique, with its own set of challenges and priorities. That's why we collaborate closely with our clients to design and deliver tailored solutions across the entire employee lifecycle. From Talent Acquisition and Talent Development to Talent Management, our expertise enables us to craft strategies that align with your business goals, strengthen people practices, and drive measurable impact.",
       image: "/assets/customised_solution.jpg"
     },
     {
       title: "Leadership Development",
-      description: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self- awareness, building core leadership competencies. From first-time managers to senior leaders, we support growth at every level through workshops, experiential learning, assessments, coaching, and action planning—ensuring leadership is not just learned, but lived.",
+      content: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self-awareness, building core leadership competencies. From first-time managers to senior leaders, we support growth at every level through workshops, experiential learning, assessments, coaching, and action planning—ensuring leadership is not just learned, but lived.",
       image: "/assets/leadership_1.jpg"
     },
     {
       title: "Executive Coaching",
-      description: "Provide structured coaching solutions for professionals at mid and senior levels—to enhance leadership effectiveness, accelerate performance and unlock potential. Our outcome-driven approach aligns individual development with organizational goals, enabling professionals to lead with clarity, confidence, and impact.",
+      content: "Provide structured coaching solutions for professionals at mid and senior levels—to enhance leadership effectiveness, accelerate performance and unlock potential. Our outcome-driven approach aligns individual development with organizational goals, enabling professionals to lead with clarity, confidence, and impact.",
       image: "/assets/executive_coaching.jpg"
     },
     {
       title: "Setting up and enhancing HR policies and practices",
-      description: "Build a strong organizational foundation through well-defined HR frameworks that drive consistency, compliance, and clarity across the workforce. Our solutions foster a resilient, engaged, and high-performing employee base—enabling long-term, sustainable growth and success.",
+      content: "Build a strong organizational foundation through well-defined HR frameworks that drive consistency, compliance, and clarity across the workforce. Our solutions foster a resilient, engaged, and high-performing employee base—enabling long-term, sustainable growth and success.",
       image: "/assets/setting_up.jpg"
     },
     {
       title: "Revamping Performance Management Systems",
-      description: "Drive a high-performance culture by designing and implementing robust, transparent performance management practices. Our approach ensures clarity in expectations, aligns individual goals with organizational objectives, and provides a structured pathway for continuous feedback, growth, and accountability—for both employees and leaders.",
+      content: "Drive a high-performance culture by designing and implementing robust, transparent performance management practices. Our approach ensures clarity in expectations, aligns individual goals with organizational objectives, and provides a structured pathway for continuous feedback, growth, and accountability—for both employees and leaders.",
       image: "/assets/performance.jpg"
     }
   ];
@@ -63,16 +63,7 @@ export default function HRServices() {
   // Group services into pairs for the carousel
   const slides = [];
   for (let i = 0; i < services.length; i += 2) {
-    const slide = services.slice(i, i + 2);
-    // If this is the last slide and it has only one item, add a placeholder
-    if (slide.length === 1) {
-      slide.push({
-        title: "",
-        description: "",
-        image: "/assets/placeholder.jpg"
-      });
-    }
-    slides.push(slide);
+    slides.push(services.slice(i, i + 2));
   }
 
   const nextSlide = () => {
@@ -101,14 +92,12 @@ export default function HRServices() {
           }}
         >
           <h2 className="text-4xl font-bold text-center mb-4">Comprehensive Human Resource Consultancy Services</h2>
-          <p className="text-xl text-[#DBB965] text-center max-w-3xl mx-auto">
-            We partner with organizations to build sustainable HR frameworks, performance
-            systems, and customized talent strategies that drive business success and
-            employee engagement.
+          <p className="text-base text-[#DBB965] text-center max-w-3xl mx-auto">
+            We partner with organizations to build sustainable HR frameworks, performance systems, and customized talent strategies that drive business success and employee engagement.
           </p>
         </motion.div>
         
-        {/* Slider container */}
+        {/* Carousel Container */}
         <div className="relative">
           {/* Navigation arrows */}
           <motion.button 
@@ -140,18 +129,59 @@ export default function HRServices() {
             >
               {slides.map((slide, slideIndex) => (
                 <div key={slideIndex} className="w-full flex-shrink-0 px-4">
-                  <div className="flex flex-row gap-6">
+                  <div className="grid grid-cols-2 gap-6">
                     {slide.map((service, serviceIndex) => (
-                      service.title ? (
-                        <ServiceCard 
-                          key={serviceIndex}
-                          title={service.title}
-                          description={service.description}
-                          image={service.image}
+                      <motion.div 
+                        key={serviceIndex}
+                        className="p-6 rounded-lg text-white relative overflow-hidden min-h-[300px]"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={controls}
+                        variants={{
+                          hidden: { opacity: 0, y: 20 },
+                          visible: { 
+                            opacity: 1, 
+                            y: 0, 
+                            transition: { 
+                              delay: 0.4 + (serviceIndex * 0.1),
+                              duration: 0.6 
+                            }
+                          }
+                        }}
+                        whileHover={{ 
+                          scale: 1.05,
+                          transition: { duration: 0.2 }
+                        }}
+                      >
+                        {/* Background Image */}
+                        <div 
+                          className="absolute inset-0 w-full h-full"
+                          style={{
+                            backgroundImage: `url(${service.image})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            opacity: 0.95
+                          }}
                         />
-                      ) : (
-                        <div key={serviceIndex} className="flex-1" /> // Empty placeholder div
-                      )
+                        
+                        {/* Gradient Overlay */}
+                        <div 
+                          className="absolute inset-0"
+                          style={{ 
+                            background: "linear-gradient(to bottom right, rgba(219, 185, 101, 0.5) 0%, rgba(117, 99, 54, 0.5) 100%)" 
+                          }}
+                        />
+                        
+                        {/* Content */}
+                        <div className="relative z-10 flex flex-col h-full">
+                          <div>
+                            <h3 className="text-lg font-bold mb-4 text-center">{service.title}</h3>
+                          </div>
+                          <div className="flex-grow" />
+                          <div className="mt-auto">
+                            <p className="text-xs md:text-sm font-medium text-center leading-tight p-4">{service.content}</p>
+                          </div>
+                        </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -213,55 +243,5 @@ export default function HRServices() {
         </motion.div>
       </div>
     </div>
-  );
-}
-
-function ServiceCard({ title, description, image }) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <motion.div 
-      className="flex-1 border-2 border-[#DBB965] rounded-lg overflow-hidden flex flex-col"
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.2 }}
-    >
-      {/* Image Section (top part) with hover effect */}
-      <div 
-        className="relative h-64 bg-gray-200"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover"
-        />
-        
-        {/* Hover Overlay - only covers the image area */}
-        {isHovered && (
-          <motion.div 
-            className="absolute inset-0 bg-black bg-opacity-80 p-6 flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <p className="text-center text-white text-sm">
-              {description}
-            </p>
-          </motion.div>
-        )}
-      </div>
-      
-      {/* Title Section (bottom part) - always visible */}
-      <div 
-        className="p-4 flex-1 flex items-center justify-center"
-        style={{ 
-          background: "linear-gradient(to bottom right, #DBB965 0%, #756336 100%)" 
-        }}
-      >
-        <h3 className="text-center text-xl font-bold text-black">{title}</h3>
-      </div>
-    </motion.div>
   );
 }

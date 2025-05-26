@@ -71,7 +71,7 @@ const OurApproach = () => {
           {approachSteps.map((step, index) => (
             <motion.div 
               key={step.id} 
-              className="flex flex-row items-center mb-16 relative"
+              className="flex flex-row items-center mb-2 relative"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: 0.6 + (index * 0.2), ease: "easeOut" }}

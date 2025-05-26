@@ -85,7 +85,7 @@ export default function ReviewCarousel() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
           }}
         >
-          <h2 className="text-5xl font-bold text-center mb-4">What Our Clients Say</h2>
+          <h2 className="text-5xl font-bold text-center mb-4">Our Clients' Feedback And Testimonials.</h2>
           
         </motion.div>
         

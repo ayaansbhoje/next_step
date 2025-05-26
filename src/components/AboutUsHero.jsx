@@ -47,7 +47,7 @@ const AboutUsHero = () => {
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
             <h2 className="text-white text-sm sm:text-5xl font-bold leading-tight">
-              "Bridging The Gap Between Human Talent And Business Success."
+              Bridging The Gap Between Human Talent And Business Success.
             </h2>
           </motion.div>
         </motion.div>

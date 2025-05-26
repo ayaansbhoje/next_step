@@ -86,7 +86,7 @@ export default function ReviewSection() {
         }}
       >
         <h2 className="text-lg md:text-3xl font-bold text-white text-left leading-tight">
-        Discover our<br />clients' feedback<br />and testimonials.
+        Our<br />Clients' Feedback<br />And Testimonials.
         </h2>
       </motion.div>
       {/* Review cards centered in the main container */}
