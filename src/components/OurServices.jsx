@@ -112,7 +112,7 @@ const OurServices = () => {
                 </h3>
 
                 {activeService === service.id && (
-                  <p className="text-center text-xs sm:text-sm md:text-base opacity-100 transition-opacity duration-300 ease-in">
+                  <p className="text-center text-xs sm:text-sm md:text-sm opacity-100 transition-opacity duration-300 ease-in">
                     {service.description}
                   </p>
                 )}
