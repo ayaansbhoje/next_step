@@ -49,7 +49,7 @@ const OurApproach = () => {
         
         {/* Introduction Text */}
         <motion.p 
-          className="text-center text-[#DBB965] mb-16 max-w-2xl mx-auto"
+          className="text-center text-[#DBB965] mb-16 max-w-2xl mx-auto text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -120,7 +120,7 @@ const OurApproach = () => {
 
         {/* Closing Text */}
         <motion.p 
-          className="text-center text-[#DBB965] mt-16 max-w-2xl mx-auto"
+          className="text-center text-[#DBB965] mt-16 max-w-2xl mx-auto text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}

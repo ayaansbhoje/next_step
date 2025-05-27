@@ -7,51 +7,26 @@ export default function HRServices() {
   const controls = useAnimation();
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          controls.start("visible");
-        } else {
-          controls.start("hidden");
-        }
-      },
-      {
-        threshold: 0.3,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [controls]);
-
   const services = [
     {
       title: "Customised Solutions",
-      content: "We understand that every organization is unique, with its own set of challenges and priorities. That's why we collaborate closely with our clients to design and deliver tailored solutions across the entire employee lifecycle. From Talent Acquisition and Talent Development to Talent Management, our expertise enables us to craft strategies that align with your business goals, strengthen people practices, and drive measurable impact.",
-      image: "/assets/customised_solution.jpg"
+      content: "Tailored HR Solutions: Developing Comprehensive People Strategies Precisely Aligned with Your Unique Organizational Goals Across Talent Acquisition, Development, and Management Ecosystems",
+      image: "/assets/customised.jpg"
     },
     {
       title: "Leadership Development",
-      content: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self-awareness, building core leadership competencies. From first-time managers to senior leaders, we support growth at every level through workshops, experiential learning, assessments, coaching, and action planning—ensuring leadership is not just learned, but lived.",
-      image: "/assets/leadership_1.jpg"
+      content: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self-awareness, building core leadership competencies.",
+      image: "/assets/leadership.jpg"
     },
     {
       title: "Executive Coaching",
       content: "Provide structured coaching solutions for professionals at mid and senior levels—to enhance leadership effectiveness, accelerate performance and unlock potential. Our outcome-driven approach aligns individual development with organizational goals, enabling professionals to lead with clarity, confidence, and impact.",
-      image: "/assets/executive_coaching.jpg"
+      image: "/assets/coaching.jpg"
     },
     {
-      title: "Setting up and enhancing HR policies and practices",
-      content: "Build a strong organizational foundation through well-defined HR frameworks that drive consistency, compliance, and clarity across the workforce. Our solutions foster a resilient, engaged, and high-performing employee base—enabling long-term, sustainable growth and success.",
-      image: "/assets/setting_up.jpg"
+      title: "Setting-up and enhancing existing HR Practices",
+      content: "Establish a structured HR framework that ensures organizational consistency, drives compliance, and cultivates a high-performing workforce, enabling sustainable business growth.",
+      image: "/assets/hr_practices.jpg"
     },
     {
       title: "Revamping Performance Management Systems",
@@ -78,6 +53,24 @@ export default function HRServices() {
     setCurrentSlide(slideIndex);
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        } else {
+          controls.start("hidden");
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, [controls]);
+
   return (
     <div ref={sectionRef} className="w-full bg-black">
       <div className="max-w-6xl mx-auto px-12 py-12 bg-black text-white">
@@ -91,9 +84,9 @@ export default function HRServices() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
           }}
         >
-          <h2 className="text-4xl font-bold text-center mb-4">Comprehensive Human Resource Consultancy Services</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">HR Services</h2>
           <p className="text-base text-[#DBB965] text-center max-w-3xl mx-auto">
-            We partner with organizations to build sustainable HR frameworks, performance systems, and customized talent strategies that drive business success and employee engagement.
+            We provide comprehensive HR solutions tailored to your organization's unique needs, helping you build and maintain a high-performing workforce.
           </p>
         </motion.div>
         
@@ -133,7 +126,10 @@ export default function HRServices() {
                     {slide.map((service, serviceIndex) => (
                       <motion.div 
                         key={serviceIndex}
-                        className="p-6 rounded-lg text-white relative overflow-hidden min-h-[300px]"
+                        className="p-5 rounded-lg text-white min-h-[220px] flex flex-col"
+                        style={{ 
+                          background: "linear-gradient(to bottom right, #DBB965 0%, #756336 100%)" 
+                        }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={controls}
                         variants={{
@@ -152,34 +148,11 @@ export default function HRServices() {
                           transition: { duration: 0.2 }
                         }}
                       >
-                        {/* Background Image */}
-                        <div 
-                          className="absolute inset-0 w-full h-full"
-                          style={{
-                            backgroundImage: `url(${service.image})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            opacity: 0.95
-                          }}
-                        />
-                        
-                        {/* Gradient Overlay */}
-                        <div 
-                          className="absolute inset-0"
-                          style={{ 
-                            background: "linear-gradient(to bottom right, rgba(219, 185, 101, 0.5) 0%, rgba(117, 99, 54, 0.5) 100%)" 
-                          }}
-                        />
-                        
-                        {/* Content */}
-                        <div className="relative z-10 flex flex-col h-full">
-                          <div>
-                            <h3 className="text-lg font-bold mb-4 text-center">{service.title}</h3>
-                          </div>
-                          <div className="flex-grow" />
-                          <div className="mt-auto">
-                            <p className="text-xs md:text-sm font-medium text-center leading-tight p-4">{service.content}</p>
-                          </div>
+                        <div className="flex-1 flex items-center justify-center">
+                          <h3 className="text-xl font-bold text-center">{service.title}</h3>
+                        </div>
+                        <div className="flex-1 flex items-center justify-center">
+                          <p className="text-sm text-center leading-relaxed">{service.content}</p>
                         </div>
                       </motion.div>
                     ))}

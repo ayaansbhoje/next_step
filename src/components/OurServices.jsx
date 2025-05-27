@@ -23,13 +23,19 @@ const OurServices = () => {
       id: 3,
       title: "Executive Coaching",
       description: "Provide structured coaching solutions for professionals at mid and senior levels—to enhance leadership effectiveness, accelerate performance and unlock potential. Our outcome-driven approach aligns individual development with organizational goals, enabling professionals to lead with clarity, confidence, and impact.",
-      position: "top-[350px] sm:top-88 left-4 sm:left-1/5"
+      position: "top-[390px] sm:top-88 left-2 sm:left-1/5"
     },
     {
       id: 4,
       title: "Setting-up and enhancing existing HR Practices",
       description: "Establish a structured HR framework that ensures organizational consistency, drives compliance, and cultivates a high-performing workforce, enabling sustainable business growth.",
-      position: "top-[350px] sm:top-88 right-4 sm:right-1/5"
+      position: "top-[390px] sm:top-88 right-4 sm:right-1/5"
+    },
+    {
+      id: 5,
+      title: "Revamping Performance Management Systems",
+      description: "Drive a high-performance culture by designing and implementing robust, transparent performance management practices. Our approach ensures clarity in expectations, aligns individual goals with organizational objectives, and provides a structured pathway for continuous feedback, growth, and accountability—for both employees and leaders.",
+      position: "top-[20px] sm:top-[500px] left-1/2 transform -translate-x-1/2"
     }
   ];
 
@@ -55,8 +61,8 @@ const OurServices = () => {
   }, [controls]);
 
   return (
-    <section ref={sectionRef} className="bg-black text-white py-12 relative w-full overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section ref={sectionRef} className="bg-black text-white py-10 relative w-full overflow-hidden">
+      <div className="container mx-auto px-2 sm:px-6">
         <motion.h2 
           className="text-2xl sm:text-2xl md:text-5xl font-bold mb-6 text-white text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +75,7 @@ const OurServices = () => {
           What we provide
         </motion.h2>
 
-        <div className="relative lg:h-[650px] flex flex-wrap justify-center gap-6 lg:block">
+        <div className="relative lg:h-[750px] flex flex-wrap justify-center gap-6 lg:block">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -95,7 +101,7 @@ const OurServices = () => {
               }}
             >
               <div
-                className={`w-66 h-66 sm:w-56 sm:h-56 md:w-86 md:h-86 rounded-full flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer ${
+                className={`w-76 h-76 sm:w-56 sm:h-56 md:w-92 md:h-92 rounded-full flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer ${
                   activeService === service.id
                     ? 'bg-transparent border-4 border-yellow-500 text-white scale-105 sm:scale-110'
                     : 'bg-yellow-500 text-black'

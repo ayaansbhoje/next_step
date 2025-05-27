@@ -48,14 +48,14 @@ const AboutUs = () => {
   }, [controls]);
 
   return (
-    <div ref={sectionRef} className="w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">
+    <div ref={sectionRef} className="w-full py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* First section - Our Story with yellow line below */}
-        <div className="mb-8 sm:mb-12 md:mb-16">
+        <div className="mb-6 sm:mb-8 md:mb-12">
           <div className="flex flex-col items-start">
             {/* Our Story heading */}
             <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-black"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3 text-black"
               initial={{ opacity: 0 }}
               animate={controls}
               variants={{
@@ -67,7 +67,7 @@ const AboutUs = () => {
             </motion.h2>
             
             {/* Vertical yellow line below heading */}
-            <div className="relative h-32 sm:h-40 mb-3 sm:mb-4">
+            <div className="relative h-24 sm:h-32 mb-2 sm:mb-3">
               <motion.div 
                 className="absolute left-0 top-0 w-1 bg-yellow-400"
                 initial="hidden"
@@ -106,15 +106,15 @@ const AboutUs = () => {
               visible: { opacity: 1, y: 0, transition: { delay: 1.9 } }
             }}
           >
-            At The Next Step (TNS), we are more than just an HR consulting firm – we are strategic partners
+            At The Next Step (TNS), we are more than an HR consulting firm – we are strategic partners
             dedicated to transforming organizations through human-centric solutions.
           </motion.p>
         </div>
         
         {/* Second section - Black line on right side */}
-        <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-end">
+        <div className="mb-6 sm:mb-8 md:mb-12 flex flex-col items-end">
           {/* Vertical black line on right */}
-          <div className="relative h-32 sm:h-40 mb-3 sm:mb-4">
+          <div className="relative h-24 sm:h-32 mb-2 sm:mb-3">
             <motion.div 
               className="absolute right-0 top-0 w-1 bg-black"
               initial="hidden"
@@ -161,7 +161,7 @@ const AboutUs = () => {
         {/* Third section - Yellow line in center */}
         <div className="flex flex-col items-center">
           {/* Vertical yellow line in center */}
-          <div className="relative h-32 sm:h-40 mb-3 sm:mb-4">
+          <div className="relative h-24 sm:h-32 mb-2 sm:mb-3">
             <motion.div 
               className="absolute left-1/2 top-0 w-1 bg-yellow-400 -translate-x-1/2"
               initial="hidden"
