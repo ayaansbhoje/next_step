@@ -9,8 +9,8 @@ export default function HRServices() {
 
   const services = [
     {
-      title: "Customised Solutions",
-      content: "Tailored HR Solutions: Developing Comprehensive People Strategies Precisely Aligned with Your Unique Organizational Goals Across Talent Acquisition, Development, and Management Ecosystems",
+      title: "Tailored HR solutions",
+      content: "Comprehensive people strategies, aligned with unique organisational goals, across  Talent Aquisition, Talent Development and Talent Management.",
       image: "/assets/customised.jpg"
     },
     {

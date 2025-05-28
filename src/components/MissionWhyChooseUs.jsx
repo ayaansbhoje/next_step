@@ -34,7 +34,7 @@ const MissionWhyChooseUs = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <h2 className="text-4xl font-bold mb-6 uppercase tracking-wider">
-              WHAT IS OUR MISSION?
+            OUR MISSION?
             </h2>
             <p className="text-lg text-yellow-500">
               We exist to help organizations and leaders unlock human potential through innovative 
