@@ -109,9 +109,14 @@ const OurServices = () => {
               <div
                 className={`w-76 h-76 sm:w-56 sm:h-56 md:w-92 md:h-92 rounded-full flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer ${
                   activeService === service.id
-                    ? 'bg-transparent border-4 border-yellow-500 text-white scale-105 sm:scale-110'
-                    : 'bg-yellow-500 text-black'
+                    ? 'bg-transparent border-4 border-[#DBB965] text-white scale-105 sm:scale-110'
+                    : 'text-black'
                 }`}
+                style={{ 
+                  background: activeService === service.id 
+                    ? 'transparent' 
+                    : 'linear-gradient(to bottom right, #DBB965 0%, #756336 100%)'
+                }}
               >
                 <h3 className="text-center font-bold text-sm sm:text-base md:text-xl mb-2 sm:mb-3">
                   {service.title}
