@@ -47,11 +47,11 @@ export default function InstituteSlider() {
     },
     {
       title: "Corporate Culture Exposure",
-      content: "We provide students with insights into corporate work environments, preparing them for the transition from campus to career. Sessions focus on workplace dynamics, behavioural expectations, organizational structures and the skills needed to thrive in a professional setting."
+      content: "We provide students with insights into corporate work environments, preparing them for the transition from campus to career. Our Sessions focus on workplace dynamics, behavioural expectations, organizational structures and the skills needed to thrive in a professional setting."
     },
     {
       title: "Career Readiness Programs",
-      content: "These hands-on workshops prepare students for job opportunities through practical guidance on resume writing, interview skills (including mock interviews), and effective strategies for creating and seizing job opportunities. Our approach enhances their confidence and job market readiness."
+      content: "These hands-on workshops prepare participants for job opportunities through practical guidance on resume writing, interview skills (including mock interviews), and effective strategies for creating and seizing job opportunities. Our approach enhances their confidence and job market readiness."
     },
     {
       title: "Faculty Training Programs",
@@ -92,7 +92,7 @@ export default function InstituteSlider() {
         >
           <h2 className="text-4xl font-bold text-center mb-4">Offerings for Educational Institutes</h2>
           <p className="text-base text-[#DBB965] text-center max-w-3xl mx-auto">
-          We collaborate closely with educational institutions to design and deliver customized programs that align with their specific goals. Each program is co-created by actively involving with faculty, ensuring relevance, continuity and lasting impact on students' development.
+          We collaborate closely with educational institutions to design and deliver customized programs that align with their specific goals. Each program is co-created by actively involving with faculty, ensuring relevance, continuity and lasting impact.
           </p>
         </motion.div>
         

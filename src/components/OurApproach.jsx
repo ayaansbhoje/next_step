@@ -125,7 +125,7 @@ const OurApproach = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
         >
-          Our relationship doesn't end with implementation. We provide ongoing support, refinement, and knowledge transfer to ensure lasting impact. As your organization evolves, our solutions evolve with you.
+          Our relationship doesn't end with implementation. We provide ongoing support, refinement, and knowledge transfer to ensure lasting impact. 
         </motion.p>
       </div>
     </div>

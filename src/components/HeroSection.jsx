@@ -145,7 +145,8 @@ const HeroSection = () => {
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               animate="show"
-              className="bg-[#DBB965] hover:bg-[#c4a55a] text-white font-medium lg:mr-220 py-2 px-4 rounded text-sm transition-colors duration-300 border-2 border-[#DBB965] hover:border-[#c4a55a] shadow-lg"
+              className="bg-[#DBB965] hover:bg-[#c4a55a] text-white font-medium lg:mr-220 py-2 px-4 rounded text-sm transition-colors duration-300"
+              style={{ backgroundColor: '#DBB965' }}
             >
               Get in touch
             </motion.button>

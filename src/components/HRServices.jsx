@@ -15,7 +15,7 @@ export default function HRServices() {
     },
     {
       title: "Leadership Development",
-      content: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self-awareness, building core leadership competencies.",
+      content: "We design and deliver leadership development solutions that empower individuals and teams to lead with clarity, confidence, and purpose. Our programs focus on enhancing self-awareness and building core leadership competencies.",
       image: "/assets/leadership.jpg"
     },
     {
@@ -86,7 +86,7 @@ export default function HRServices() {
         >
           <h2 className="text-4xl font-bold text-center mb-4">HR Services</h2>
           <p className="text-base text-[#DBB965] text-center max-w-3xl mx-auto">
-            We provide comprehensive HR solutions tailored to your organization's unique needs, helping you build and maintain a high-performing workforce.
+            We provide comprehensive HR solutions tailored to organization's unique needs, helping build and maintain a high-performing workforce.
           </p>
         </motion.div>
         
