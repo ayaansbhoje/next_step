@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn } from '../variant';
+import { Link } from 'react-router-dom';
 
 const TypewriterText = ({ text, delay = 0, onComplete = () => {} }) => {
   const [displayText, setDisplayText] = useState('');
@@ -141,15 +142,19 @@ const HeroSection = () => {
         {/* Button */}
         <AnimatePresence>
           {lastLineComplete && (
-            <motion.button
+            <motion.div
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               animate="show"
-              className="bg-[#DBB965] hover:bg-[#c4a55a] text-white font-medium lg:mr-220 py-2 px-4 rounded text-sm transition-colors duration-300"
-              style={{ backgroundColor: '#DBB965' }}
             >
-              Get in touch
-            </motion.button>
+              <Link 
+                to="/ContactUs"
+                className="inline-block bg-[#DBB965] hover:bg-[#c4a55a] text-white font-medium lg:mr-220 py-2 px-4 rounded text-sm transition-colors duration-300"
+                style={{ backgroundColor: '#DBB965', color: '#FFFFFF' }}
+              >
+                Get in touch
+              </Link>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>
