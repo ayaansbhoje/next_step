@@ -41,18 +41,19 @@ const Navbar = () => {
         <div className="flex items-center">
           <button
             onClick={toggleMenu}
-            className="text-white hover:text-yellow-500 transition duration-300"
+            className="text-white hover:text-yellow-500 transition duration-300 flex items-center gap-2"
           >
-            <span className="mr-1 sm:mr-2 text-white text-xs sm:text-sm md:text-base">MENU</span>
-            <span className="inline-block">
-              <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24">
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-                />
-              </svg>
+            <span className="text-white text-xs sm:text-sm md:text-base font-medium">MENU</span>
+            <span className="inline-block w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7">
+              {isMenuOpen ? (
+                <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 18L18 6M6 6l12 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              ) : (
+                <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6h16M4 12h16M4 18h16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              )}
             </span>
           </button>
         </div>
