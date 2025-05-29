@@ -41,13 +41,21 @@ const Navbar = () => {
         <div className="flex items-center">
           <button
             onClick={toggleMenu}
-            className="bg-black text-white hover:bg-gray-800 transition duration-300 flex items-center px-3 py-1.5 rounded"
+            style={{
+              backgroundColor: '#000000',
+              color: '#FFFFFF',
+              display: 'flex',
+              alignItems: 'center',
+              padding: '6px 12px',
+              borderRadius: '4px',
+              border: '1px solid #FFFFFF'
+            }}
           >
-            <span className="mr-1 sm:mr-2 text-white text-xs sm:text-sm md:text-base">MENU</span>
+            <span style={{ marginRight: '8px', color: '#FFFFFF' }}>MENU</span>
             {isMenuOpen ? (
-              <X className="w-4 h-4 text-white" />
+              <X style={{ width: '16px', height: '16px', color: '#FFFFFF' }} />
             ) : (
-              <Menu className="w-4 h-4 text-white" />
+              <Menu style={{ width: '16px', height: '16px', color: '#FFFFFF' }} />
             )}
           </button>
         </div>
