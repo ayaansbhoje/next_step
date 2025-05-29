@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -44,16 +44,11 @@ const Navbar = () => {
             className="text-white hover:text-yellow-500 transition duration-300 flex items-center"
           >
             <span className="mr-1 sm:mr-2 text-white text-xs sm:text-sm md:text-base">MENU</span>
-            <span className="inline-block">
-              <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF">
-                <path
-                  stroke="#FFFFFF"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-                />
-              </svg>
-            </span>
+            {isMenuOpen ? (
+              <X className="w-4 h-4 text-white" />
+            ) : (
+              <Menu className="w-4 h-4 text-white" />
+            )}
           </button>
         </div>
 
