@@ -9,27 +9,27 @@ export default function ReviewSection() {
   const reviews = [
     {
       id: 1,
-      quote: "Their organizational redesign transformed our company culture. We saw a 40% improvement in communication and employee satisfaction within just six months.",
-      author: "Michael Chen",
-      position: "CEO of Global Logistics Network"
+      quote: "The Next Step brings professional expertise and exceptional communications to every engagement. They offer tailored solutions, efficient talent acquisition, and impactful employee development programmes. Over time, they have become an extension of our own team—a trusted HR and strategic partner for exponential growth.",
+      author: "Mr. HP Shetty",
+      position: "Director at Intexso Biochem Pvt Ltd"
     },
     {
       id: 2,
-      quote: "The leadership training program revolutionized how our executives approach challenges. Our decision-making process is now more efficient and collaborative.",
-      author: "Sarah Johnson",
-      position: "COO of TechInnovate Solutions"
+      quote: "Working with The Next Step has been a smooth, insightful, and genuinely supportive experience. Their professionalism, clarity of communication, and dedication to delivering real value truly stand out. I always felt like I was in capable hands, with a team that not only understood my goals but also brought creative and practical solutions to the table.",
+      author: "Prof. Milind J. Umekar",
+      position: "President, IPCA"
     },
     {
       id: 3,
-      quote: "Working with their team helped us identify and nurture talent within our organization. Our internal promotion rate increased by 35% in just one year.",
-      author: "David Rodriguez",
-      position: "HR Director at FutureBridge Inc."
+      quote: "Working with SJG has been an inspiring experience. Her pleasant manner and friendly demeanor creates an immediate connection with participants, setting the tone for a collaborative and engaging learning environment. With an exceptional command over language and a natural flair for leadership, she not only delivers powerful content but also models the very qualities they teach. What truly sets SJG apart is her mastery in facilitating group activities that bring out the best in every participant. Her sessions are high-energy, well-structured, and thought-provoking. As a true taskmaster, she ensures that goals are met without compromising on fun or learning. Her ability to hold the audience's attention and drive meaningful conversations makes her a standout in the space of leadership development.",
+      author: "Dr. Vandana Patravale",
+      position: "APTI"
     },
     {
       id: 4,
-      quote: "The culture transformation workshop created a paradigm shift in how our teams collaborate. Project delivery times improved by 28% across all departments.",
-      author: "Jennifer Liu",
-      position: "VP of Operations at Quantum Enterprises"
+      quote: "We had the privilege of hosting Ms. Shabnam Gaitonde for a session at the Federation of Gujarat Industries. Her presentation was articulate, insightful, and highly relevant to the professional landscape. She skillfully blended theory with practical examples, making the session both engaging and impactful. Ms. Shabnam ensured active participation from attendees, fostering meaningful discussions and leaving participants with clear, actionable takeaways to apply this in their respective workplaces.",
+      author: "Priyanka Verma",
+      position: "Federation of Gujarat Industries"
     },
     {
       id: 5,
@@ -71,7 +71,7 @@ export default function ReviewSection() {
     <div ref={sectionRef} className="w-full py-6 md:py-10 bg-white flex items-center">
       {/* Black box flush with the left edge */}
       <motion.div 
-        className="bg-black p-4 md:p-8 w-52 md:w-80 flex items-center h-52 md:h-72 z-20 rounded-r-lg"
+        className="bg-black p-4 md:p-8 w-56 md:w-96 flex items-center h-56 md:h-80 z-20 rounded-r-lg"
         initial={{ opacity: 0, x: -50 }}
         animate={controls}
         variants={{
@@ -118,16 +118,16 @@ export default function ReviewSection() {
                   {duplicatedReviews.map((review, index) => (
                     <div 
                       key={`${review.id}-${index}`}
-                      className="min-w-64 md:min-w-80 max-w-64 md:max-w-80 p-2 flex-shrink-0"
+                      className="min-w-72 md:min-w-96 max-w-72 md:max-w-96 p-2 flex-shrink-0"
                     >
                       <div 
-                        className="p-4 md:p-8 rounded-lg h-48 md:h-64 flex flex-col justify-between shadow-lg"
+                        className="p-4 md:p-8 rounded-lg h-52 md:h-72 flex flex-col justify-between shadow-lg"
                         style={{ backgroundColor: '#DBB965' }}
                       >
-                        <p className="text-xs md:text-base mb-2 md:mb-4 font-medium">
+                        <p className="text-[11px] md:text-base mb-2 md:mb-4 font-medium -mt-3">
                           "{review.quote}"
                         </p>
-                        <div>
+                        <div className="-mt-2">
                           <p className="font-bold text-[10px] md:text-sm">-{review.author},</p>
                           <p className="text-[10px] md:text-sm">{review.position}</p>
                         </div>

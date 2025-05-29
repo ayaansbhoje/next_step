@@ -82,11 +82,18 @@ const Navbar = () => {
           <div className="text-black font-bold text-xl sm:text-2xl md:text-3xl">MENU</div>
           <button 
             onClick={toggleMenu}
-            className="text-white"
+            style={{
+              backgroundColor: '#000000',
+              color: '#FFFFFF',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '6px',
+              borderRadius: '4px',
+              border: '1px solid #FFFFFF'
+            }}
           >
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X style={{ width: '16px', height: '16px', color: '#FFFFFF' }} />
           </button>
         </div>
         

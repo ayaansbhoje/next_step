@@ -36,27 +36,31 @@ export default function ReviewCarousel() {
   const reviews = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      image: "/assets/test_1.jpg",
-      text: "The service was exceptional from start to finish. The team went above and beyond to ensure our needs were met. I would highly recommend them to anyone looking for quality and reliability."
+      name: "Mr. HP Shetty",
+      position: "Director at Intexso Biochem Pvt Ltd",
+      image: "/assets/test_3.jpg",
+      text: "The Next Step brings professional expertise and exceptional communications to every engagement. They offer tailored solutions, efficient talent acquisition, and impactful employee development programmes. Over time, they have become an extension of our own team—a trusted HR and strategic partner for exponential growth."
     },
     {
       id: 2,
-      name: "Michael Chen",
-      image: "/assets/test_2.jpg",
-      text: "I was impressed by the attention to detail and professionalism. They delivered exactly what they promised and on time. Will definitely be using their services again in the future."
+      name: "Prof. Milind J. Umekar",
+      position: "President, IPCA",
+      image: "/assets/test_6.jpg",
+      text: "Working with The Next Step has been a smooth, insightful, and genuinely supportive experience. Their professionalism, clarity of communication, and dedication to delivering real value truly stand out. I always felt like I was in capable hands, with a team that not only understood my goals but also brought creative and practical solutions to the table."
     },
     {
       id: 3,
-      name: "Emma Rodriguez",
-      image: "/assets/test_3.jpg",
-      text: "Absolutely incredible experience! The product quality exceeded my expectations and the customer service was top-notch. They made the entire process smooth and enjoyable."
+      name: "Dr. Vandana Patravale",
+      position: "APTI",
+      image: "/assets/test_5.jpg",
+      text: "Working with SJG has been an inspiring experience. Her pleasant manner and friendly demeanor creates an immediate connection with participants, setting the tone for a collaborative and engaging learning environment. With an exceptional command over language and a natural flair for leadership, she not only delivers powerful content but also models the very qualities they teach. What truly sets SJG apart is her mastery in facilitating group activities that bring out the best in every participant. Her sessions are high-energy, well-structured, and thought-provoking. As a true taskmaster, she ensures that goals are met without compromising on fun or learning."
     },
     {
       id: 4,
-      name: "David Thompson",
+      name: "Priyanka Verma",
+      position: "Federation of Gujarat Industries",
       image: "/assets/test_4.jpg",
-      text: "I've been a customer for years and have never been disappointed. Their commitment to excellence is evident in everything they do. I couldn't imagine going anywhere else."
+      text: "We had the privilege of hosting Ms. Shabnam Gaitonde for a session at the Federation of Gujarat Industries. Her presentation was articulate, insightful, and highly relevant to the professional landscape. She skillfully blended theory with practical examples, making the session both engaging and impactful. Ms. Shabnam ensured active participation from attendees, fostering meaningful discussions and leaving participants with clear, actionable takeaways to apply this in their respective workplaces."
     }
   ];
 
@@ -95,18 +99,19 @@ export default function ReviewCarousel() {
                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
               {reviews.map((review) => (
                 <div key={review.id} className="min-w-full flex flex-col bg-gradient-to-r from-[#DBB965] to-[#756336] rounded-lg overflow-hidden shadow-2xl">
-                  <div className="w-full h-[420px] relative">
+                  <div className="w-full h-[340px] relative">
                     <img 
                       src={review.image} 
                       alt={`${review.name}'s review`} 
                       className="w-full h-full object-cover"
-                      style={{ objectPosition: 'center 30%' }}
+                      style={{ objectPosition: 'center 25%' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
-                  <div className="w-full p-4 flex flex-col justify-center relative">
-                    <div className="absolute left-4 top-0 w-1 h-10 bg-white/30"></div>
-                    <h2 className="text-2xl font-bold text-white mb-3">{review.name}</h2>
+                  <div className="w-full p-6 flex flex-col justify-center relative -mt-2">
+                    <div className="absolute left-6 top-0 w-1 h-10 bg-white/30"></div>
+                    <h2 className="text-2xl font-bold text-white mb-1">{review.name}</h2>
+                    <p className="text-white/80 text-sm mb-3">{review.position}</p>
                     <div className="w-12 h-1 bg-white/80 mb-3"></div>
                     <p className="text-white italic font-medium leading-relaxed text-lg">"{review.text}"</p>
                   </div>
